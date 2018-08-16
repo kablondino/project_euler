@@ -10,31 +10,34 @@
 
 package main
 
-import ( "fmt"
-		"math" )
+import ( "fmt" )
 
-func F( AN int ) {
-	if AN <= 0 {
-		return 0
+func isEven( x int ) bool {
+
+	if x & 1 == 0 {
+		return true
 	}
-	if AN == 1 {
-		return 1
+
+	return false
+}
+
+
+func sumEvens( limit int ) int {
+	sum := 0
+
+	for i, j := 1, 1; j < limit; i, j = i + j, i {
+		if isEven(i) {
+			sum += i
+		}
 	}
-	if AN > 1 {
-		return ( math.Pow((1 + math.Sqrt(5)), AN) - math.Pow((1 - math.Sqrt(5)), AN) ) / ( math.Pow(2, AN) * math.Sqrt(5))
-	}
+
+	return sum
 }
 
 func main() {
 
-	the_sum := 0
-	i := 0
+	answer := sumEvens( 4000000 )
 
-	for F(i) <= 4.0e6 {
-		if F(i) % 2 == 0 { the_sum += F(i) }
-		i += 1
-	}
-
-	fmt.Println( the_sum )
+	fmt.Println("For values under 4.0e6, the sum is %f", answer)
 }
 
