@@ -13,7 +13,7 @@ func main() {
 	const the_target uint64 = 600851475143
 	current := 600851475143
 
-	var i,high int = 3, 0
+	var i, high int = 3, 0
 
 	for true {
 		for ( (current % i) == 0 ) {
