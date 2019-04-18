@@ -21,5 +21,5 @@ while True:
 
 	i += 2
 
-print "Largest prime factor of %d is %d\n" % (the_target, high)
+print("Largest prime factor of %d is %d" % (the_target, high))
 
