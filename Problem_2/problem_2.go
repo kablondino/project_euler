@@ -13,10 +13,7 @@ package main
 import ( "fmt" )
 
 func isEven( x int ) bool {
-
-	if x & 1 == 0 {
-		return true
-	}
+	if x & 1 == 0 { return true }
 
 	return false
 }
@@ -34,10 +31,11 @@ func sumEvens( limit int ) int {
 	return sum
 }
 
-func main() {
 
+func main() {
 	answer := sumEvens( 4000000 )
 
-	fmt.Println("For values under 4.0e6, the sum is %f", answer)
+	fmt.Println("The sum of the even-valued terms of the Fibonacci sequence ",
+		"up to 4 million is", answer)
 }
 

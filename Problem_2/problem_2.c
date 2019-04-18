@@ -22,7 +22,8 @@ int main() {
 		i += 1;
 	}
 
-	printf("%ld\n", the_sum);
+	printf("The sum of the even-valued terms of the Fibonacci sequence up to "
+		"4 million is %lu", the_sum);
 	return 0;
 }
 
