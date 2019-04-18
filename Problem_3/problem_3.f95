@@ -15,19 +15,19 @@ program problem3
 
     print *, the_target
 
-    do while (1)
-        do while ( (current % i) == 0 )
+    do while( .true. )
+        do while ( mod(current, i) .eq. 0 )
             current = current / i
             high = i
         enddo
 
-        if( current == 1 )
+        if( current .eq. 1 ) then
             exit
         endif
 
         i = i + 2
     enddo
 
-    print'(a, I, a, I)' "Largest prime factor of ", the_target, "is ", high
-end
+    print'(a, I0, a, I0)', "Largest prime factor of ", the_target, " is ", high
+end program
 
