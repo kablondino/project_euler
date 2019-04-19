@@ -7,37 +7,42 @@
 ! By considering the terms in the Fibonacci sequence whose values do
 ! not exceed four million, find the sum of the even-valued terms.
 
-function F(AN) result(Fib_number)
+integer*8 function Fibonacci(AN) result(Fib_number)
     implicit none
     ! Calculates the Fibonacci numbers
-    integer(kind=8), intent(in) :: AN
-    integer(kind=8), intent(out) :: Fib_number
+    integer*8, intent(in) :: AN
+    real*8 :: temp_irrational
 
     if( AN <= 0 ) then
         Fib_number = 0
     else if( AN == 1 ) then
         Fib_number = 1
     else
-        Fib_number =  int(( (1.0 + SQRT(5.0))**AN - (1.0 - SQRT(5.0))**AN ) &
-            / ( (2.0)**AN * SQRT(5.0) ))
+        temp_irrational = ( (1.0 + SQRT(5.0))**AN - (1.0 - SQRT(5.0))**AN ) &
+            / ( (2.0)**AN * SQRT(5.0) )
+        Fib_number =  int(temp_irrational)
+        print*, AN, temp_irrational
     endif
 
-    return
-end
+end function Fibonacci
 
 
 program problem2
     implicit none
-    integer(kind=8) :: i = 2
-    integer(kind=8) :: the_sum = 0
+    integer*8 :: i = 2
+    integer*8 :: the_sum = 0
+    integer*8 :: Fibonacci
 
-    do while( F(i) <= 4000000 )
-        if( mod(F(i), 2) == 0 ) then
-            the_sum = the_sum + F(i)
+    do while( Fibonacci(i) <= int(4.0e6, 8) )
+        if( mod(Fibonacci(i), 2) == 0 ) then
+            the_sum = the_sum + Fibonacci(i)
+            print*, Fibonacci(i), the_sum
         endif
+        i = i + 1
     enddo
 
-    write(*,*) the_sum
+    write(*,'(a, a, I0)') "The sum of the even-valued terms of the ", &
+        "Fibonacci sequence up to 4 million is ", the_sum
 
 end program problem2
 
