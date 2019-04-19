@@ -35,7 +35,7 @@ func sumEvens( limit int ) int {
 func main() {
 	answer := sumEvens( 4000000 )
 
-	fmt.Println("The sum of the even-valued terms of the Fibonacci sequence ",
+	fmt.Println("The sum of the even-valued terms of the Fibonacci sequence",
 		"up to 4 million is", answer)
 }
 

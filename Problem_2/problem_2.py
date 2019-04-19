@@ -20,7 +20,7 @@ the_sum, i = 0, 2
 
 while F(i) <= 4.0e6:
     if F(i) % 2 == 0:
-            the_sum = the_sum + F(i)
+        the_sum = the_sum + F(i)
     i = i + 1
 
 print("The sum of the even-valued terms of the Fibonacci sequence up to 4 " \
