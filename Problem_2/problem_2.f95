@@ -7,21 +7,22 @@
 ! By considering the terms in the Fibonacci sequence whose values do
 ! not exceed four million, find the sum of the even-valued terms.
 
-integer*8 function Fibonacci(AN) result(Fib_number)
+recursive integer*8 function Fibonacci(AN) result(Fib_number)
     implicit none
     ! Calculates the Fibonacci numbers
     integer*8, intent(in) :: AN
-    real*8 :: temp_irrational
 
     if( AN <= 0 ) then
         Fib_number = 0
     else if( AN == 1 ) then
         Fib_number = 1
     else
-        temp_irrational = ( (1.0 + SQRT(5.0))**AN - (1.0 - SQRT(5.0))**AN ) &
-            / ( (2.0)**AN * SQRT(5.0) )
-        Fib_number =  int(temp_irrational)
-        print*, AN, temp_irrational
+        Fib_number = Fibonacci(AN - 1) + Fibonacci(AN - 2)
+! NOTE that the following method does not quite round correctly, giving a
+! false positive on a particular Fibonacci number.
+!    else
+!        Fib_number = ( (1.0 + SQRT(5.0))**AN - (1.0 - SQRT(5.0))**AN ) &
+!            / ( (2.0)**AN * SQRT(5.0) )
     endif
 
 end function Fibonacci
