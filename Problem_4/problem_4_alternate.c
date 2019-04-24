@@ -7,17 +7,17 @@
 #include <stdio.h>
 
 
-int reverse_integer( int forward_integer );
-int is_palindrome( int a, int b );
+unsigned int reverse_integer( unsigned int forward_integer );
+
 
 int main() {
 	unsigned int max_palindrome = 0;  // Initialized final answer
-	int final_i = 0;
-	int final_j = 0;
+	unsigned int final_i = 0;
+	unsigned int final_j = 0;
 
-	for( int i = 999; i >= 100; i-- ) {
-		for( int j = i; j >= 100; j-- ) {
-			if( is_palindrome(i*j, reverse_integer(i*j)) && max_palindrome < i*j ) {
+	for( unsigned int i = 999; i >= 100; i-- ) {
+		for( unsigned int j = i; j >= 100; j-- ) {
+			if( i*j == reverse_integer(i*j) && max_palindrome < i*j ) {
 				final_i = i; final_j = j;
 				max_palindrome = i*j;
 			}
@@ -30,9 +30,10 @@ int main() {
 }
 
 
-int reverse_integer( int forward_integer ) {
-	int remainder;
-	int reversed = 0;
+unsigned int reverse_integer( unsigned int forward_integer ) {
+	// Reverses the integer by base-10 modulus
+	unsigned int remainder;
+	unsigned int reversed = 0;
 
 	while( forward_integer != 0 ) {
 		remainder = forward_integer % 10;
@@ -41,11 +42,5 @@ int reverse_integer( int forward_integer ) {
 	}
 
 	return reversed;
-}
-
-
-int is_palindrome( int a, int b ) {
-	if( a == b ) { return 1; }
-	else { return 0; }
 }
 
