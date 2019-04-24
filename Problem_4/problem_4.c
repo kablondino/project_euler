@@ -4,6 +4,11 @@
  * Find the largest palindrome made from the product of two 3-digit numbers.
 */
 
+/* NOTE that this is not the best way to solve this problem. A much better way
+ * is by not bothering with converting to a string. See the alternative C
+ * program.
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -34,6 +39,9 @@ int main() {
 
 
 int is_palindrome( unsigned long int a, unsigned long int b ) {
+	// Check if the number is a palindrome by converting the product to a
+	// string and then comparing it to a reversed version of itself.
+
 	char possible_palindrome[12];  // Any 64-bit unsigned integer will fit this
 	// possible_palindrome becomes a string
 	sprintf( possible_palindrome, "%lu", a*b );
