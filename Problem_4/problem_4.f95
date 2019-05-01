@@ -5,17 +5,19 @@
 ! Find the largest palindrome made from the product of two 3-digit numbers.
 !
 
-function is_palindrome( x )
+function is_palindrome( forward_integer )
     implicit none
-    integer*8 :: x, i, j
+    integer*8 :: forward_integer, i, j
     logical :: is_palindrome
     character(10) :: chars
 
-    write(chars, '(I10)') x
+    ! The integer gets written to chars
+    write(chars, '(I10)') forward_integer
 
     i = 1
     j = 10
 
+    ! Skip over blank spaces in chars
     do while( chars(i:i) == ' ' )
         i = i + 1
     enddo
@@ -29,6 +31,7 @@ function is_palindrome( x )
         j = j - 1
     enddo
 
+    ! Default answer
     is_palindrome = .true.
 
 end function is_palindrome
