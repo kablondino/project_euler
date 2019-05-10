@@ -26,8 +26,10 @@ def primes( limit ):
 
 
 def prime_factorization( target ):
+    if target <= 1:
+        return {0:0}
     # Generate list up to target
-    possible_primes = primes(int(math.sqrt(target)))
+    possible_primes = primes(target)
 
     # Create list of zeros of same length as primes list
     zeros = [0 for i in range(len(possible_primes))]
@@ -38,7 +40,7 @@ def prime_factorization( target ):
         prime_dict[2] += 1
         target = target / 2
 
-    for i in range(3, int(target**0.5) + 1, 2):
+    for i in range(3, int(target) + 1, 2):
         while target % i == 0:
             prime_dict[i] += 1
             target = target / i
@@ -48,7 +50,10 @@ def prime_factorization( target ):
         prime_dict = {target: 1}
 
     return {x:y for x,y in prime_dict.items() if y != 0}
+#    return prime_dict
 
 
 print(prime_factorization(100))
+#for i in range(100):
+#    print(prime_factorization(i))
 
