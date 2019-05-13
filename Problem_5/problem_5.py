@@ -13,23 +13,30 @@ def primes( limit ):
     Args:
         limit: upper limit in list of primes
     Returns:
-        primes: list of prime numbers up to, but excluding the limit
+        prime_list: list of prime numbers up to half of the limit
     """
-    if limit == 1:
-        return [1]
-    elif limit >= 2:
-        primes = [2]
-        for number in range(3, limit, 2):
-            if all(number % i != 0 for i in
-                    range(3, int(math.sqrt(number)) + 1, 2)):
-                primes.append(number)
 
-        return primes
-    else:
-        return [0]
+    prime_list = []
+
+    for val in range(1, limit + 1):
+        if val > 1:
+            for n in range(2, val):
+                if val % n == 0:
+                    break
+            else:
+                prime_list.append(val)
+
+    return prime_list
 
 
 def prime_factorization( target ):
+    """
+    Args:
+        target:
+    Returns:
+        prime_dict that has key/value pairs with value of 0 eliminated
+    """
+
     prime_dict = {}  # Initialize and reset
 
     if target <= 1:
@@ -40,16 +47,14 @@ def prime_factorization( target ):
     # Create list of zeros of same length as primes list
     zeros = [0 for i in range(len(possible_primes))]
     # Initialize dictionary with zero values
-    prime_dict = dict(zip(possible_primes, zeros))  # Initialize with 0
+    prime_dict = dict(zip(possible_primes, zeros))
 
+    # If target is even, take out all the 2's
     while target % 2 == 0:
         prime_dict[2] += 1
         target = target / 2
-    target = int(target)
 
-    for i in range(3, target + 1, 2):
-        if target == i:
-            break
+    for i in range(3, int(target) + 1, 2):
         while target % i == 0:
             prime_dict[i] += 1
             target = target / i
@@ -60,6 +65,15 @@ def prime_factorization( target ):
 
     return {x:y for x,y in prime_dict.items() if y != 0}
 
-for i in range(2, 21):
-    print(i, prime_factorization(i), max(prime_factorization(i), key=int))
+
+if __name__ == '__main__':
+    running_product = 1  # Initialize answer
+    max_factors = []
+
+    for i in range(2, 21):
+        print(prime_factorization(i))
+
+#        running_product *= max(sorted(prime_factorization(i), reverse=True)[0])
+
+#    print(running_product)
 
