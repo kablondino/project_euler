@@ -15,19 +15,25 @@ def primes( limit ):
     Returns:
         primes: list of prime numbers up to, but excluding the limit
     """
+    if limit == 1:
+        return [1]
+    elif limit >= 2:
+        primes = [2]
+        for number in range(3, limit, 2):
+            if all(number % i != 0 for i in
+                    range(3, int(math.sqrt(number)) + 1, 2)):
+                primes.append(number)
 
-    primes = [2]
-    for number in range(3, limit, 2):
-        if all(number % i != 0 for i in
-                range(3, int(math.sqrt(number)) + 1, 2)):
-            primes.append(number)
-
-    return primes
+        return primes
+    else:
+        return [0]
 
 
 def prime_factorization( target ):
+    prime_dict = {}  # Initialize and reset
+
     if target <= 1:
-        return {0:0}
+        return { 1 : 1 }
     # Generate list up to target
     possible_primes = primes(target)
 
@@ -39,8 +45,11 @@ def prime_factorization( target ):
     while target % 2 == 0:
         prime_dict[2] += 1
         target = target / 2
+    target = int(target)
 
-    for i in range(3, int(target) + 1, 2):
+    for i in range(3, target + 1, 2):
+        if target == i:
+            break
         while target % i == 0:
             prime_dict[i] += 1
             target = target / i
@@ -50,10 +59,7 @@ def prime_factorization( target ):
         prime_dict = {target: 1}
 
     return {x:y for x,y in prime_dict.items() if y != 0}
-#    return prime_dict
 
-
-print(prime_factorization(100))
-#for i in range(100):
-#    print(prime_factorization(i))
+for i in range(2, 21):
+    print(i, prime_factorization(i), max(prime_factorization(i), key=int))
 
