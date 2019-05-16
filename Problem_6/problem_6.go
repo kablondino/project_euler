@@ -10,3 +10,24 @@
  * natural numbers and the square of the sum.
 */
 
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func main() {
+	var sum_of_squares, square_of_sum int = 0, 0
+
+	for i := 1; i <= 100; i++ {
+		sum_of_squares += int(math.Pow(float64(i), 2))
+		square_of_sum += i
+	}
+
+	square_of_sum = int(math.Pow(float64(square_of_sum), 2))
+
+	fmt.Printf("Sum of squares: %d\nSquare of sum: %d\nDifference: %d",
+			sum_of_squares, square_of_sum, square_of_sum - sum_of_squares)
+}
+
