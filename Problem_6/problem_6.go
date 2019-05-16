@@ -17,6 +17,7 @@ import (
 	"math"
 )
 
+
 func main() {
 	var sum_of_squares, square_of_sum int = 0, 0
 
