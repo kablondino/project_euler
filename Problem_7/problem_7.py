@@ -5,3 +5,38 @@
     What is the 10,001st (ten-thousand first) prime number?
 """
 
+
+def is_prime( number ):
+    # Exit out for negative numbers, 0, 1, and non-integers
+    if number <= 1 or type(number) != int:
+        return False
+
+    if number == 2:
+        return True
+    elif number % 2 == 0:
+        return False
+
+    # Initialize and loop for odd numbers
+    i = 3
+    while i < int(number**0.5) + 1:
+        if number % i == 0:
+            return False
+        i += 1
+
+    # If it went through all of the conditions, it must be prime
+    return True
+
+
+if __name__ == '__main__':
+    # Initialize the looping counter and the intended answer
+    counter, target = 1, 3
+
+    while counter < 10001:
+        if is_prime(target):
+            counter += 1
+        target += 2  # Increment to the next odd number
+
+    target -= 2  # Eliminate the last increment of 2 from the last loop
+
+    print(f"The {counter} prime number is {target}")
+
