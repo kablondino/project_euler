@@ -40,9 +40,9 @@ PROGRAM ten_thousandth_prime
     integer :: counter, the_target
     logical :: is_prime
 
+    counter = 1
     the_target = 3
 
-    !! NOT WORKING LOOP correctly
     do while( counter < 10001 )
         if( is_prime(the_target) .eqv. .true. ) then
             counter = counter + 1
