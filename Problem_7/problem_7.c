@@ -10,7 +10,7 @@
 
 
 int is_prime( int number ) {
-    // Exit out for negative numbers, 0, and 1
+	// Exit out for negative numbers, 0, and 1
 	if( number <= 1 ) { return 0; }
 
 	if( number == 2 ) { return 1; }
@@ -24,14 +24,14 @@ int is_prime( int number ) {
 		i++;
 	}
 
-    // If it went through all of the conditions, it must be prime
+	// If it went through all of the conditions, it must be prime
 	return 1;
 }
 
 
 int main() {
-    // Initialize the looping counter and the intended answer
-    int counter = 1;
+	// Initialize the looping counter and the intended answer
+	int counter = 1;
 	int target = 3;
 
 	while( counter < 10001 ) {
