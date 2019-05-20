@@ -10,35 +10,43 @@ clear
 function is_prime = check_prime( number )
 	% Checks if the input number is prime
 	if number <= 1
-		return False
+		is_prime = false;
+		break;
 	end
 
 	if number == 2
-		return True
+		is_prime = true; break;
 	else if mod(number, 2) == 0
-		return False
+		is_prime = false; break;
 	end
 
 	i = 3;
 	while i < int(number^0.5) + 1
 		if mod(number, i) == 0
-			return False
+			is_prime = false; break;
+		end
 		i = i + 1;
+	end
 
 	% If it went through all of the conditions, it must be prime
-	return True
+	is_prime = true;
+	disp('HELLO! func')
 end
 
 
+disp('HELLO! premain')
 counter = 1;
 target = 3;
 
 while counter < 10001
-	if is_prime(target) is True
+	if is_prime(target) == true
 		counter = counter + 1;
+	end
 	target = target + 2;
+end
 
 target -= 2;  % Eliminate the last increment of 2 from the last loop
 
+disp('HELLO! postmain')
 sprintf('The %d prime number is %d', counter, target)
 
