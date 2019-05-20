@@ -31,6 +31,7 @@ import numpy
 
 
 if __name__ == '__main__':
+    # Open the file and read in as one long string
     with open('large_number.dat', 'r') as f:
         input_large_number = [line[:-1] for line in f]
         input_large_number = ''.join(input_large_number)
@@ -39,11 +40,14 @@ if __name__ == '__main__':
     largest_product = 0
     adjacent_digits = [0] * 13
 
+    # Loop through number, looking at the product of chunks of 13
     for i in range(len(input_large_number) - len(adjacent_digits) + 1):
         adjacent_digits = [int(x) for x in input_large_number[i:i+13]]
         temp_product = numpy.prod(adjacent_digits)
         if largest_product < temp_product:
             largest_product = temp_product
+            permanent_digits = [y for y in adjacent_digits]
 
-    print(largest_product)
-
+    # Fancy manner to print out answer
+    print("*".join(map(str, permanent_digits)) + " = " + str(largest_product),
+            end='')
