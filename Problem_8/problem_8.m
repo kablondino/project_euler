@@ -26,3 +26,31 @@
 % Find the thirteen adjacent digits in the 1000-digit number that have the
 % greatest product. What is the value of this product?
 %%
+
+clc; clear all; close all
+
+
+% Read in number from file as a string (char array)
+file = fopen('large_number.dat', 'r');
+input_large_number = fscanf(file, '%s');
+
+% Initialize answer and moving array
+largest_product = 0;
+adjacent_digits = zeros(1, 13);
+
+for i = 1 : length(input_large_number) - length(adjacent_digits) + 1
+	adjacent_digits = input_large_number(i : i + 12);
+	temp_product = 1;
+	for j = adjacent_digits
+		temp_product = temp_product * str2num(j);
+	end
+
+	if largest_product < temp_product
+		largest_product = temp_product;
+		permanent_digits = adjacent_digits;
+	end
+end
+
+format_display_digits = '%c*%c*%c*%c*%c*%c*%c*%c*%c*%c*%c*%c*%c = %d';
+disp(sprintf(format_display_digits, permanent_digits, largest_product))
+
