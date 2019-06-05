@@ -26,3 +26,40 @@
  * Find the thirteen adjacent digits in the 1000-digit number that have the
  * greatest product. What is the value of this product?
 */
+
+#include <stdio.h>
+
+
+char *read_large_number( char filename, int length_of_file ) {
+
+	FILE *fp;
+	char buff[length_of_file];
+
+	fp = fopen(filename, "r");
+	size_t value = fread( buff, 1, length_of_file, fp );
+
+
+	char input_large_number[value];
+	size_t buffer_index = 0;
+
+	for( int i = 0; i < value; i++ ) {
+		if( buff[i] != '\n' ) {
+			input_large_number[buffer_index] = buff[i];
+			buffer_index++;
+		}
+		else { continue; }
+		if( buff[i] == '\0' ) { break; }
+	}
+
+	// Set the final character
+	input_large_number[buffer_index] = '\0';
+
+	return input_large_number;
+}
+
+int main() {
+
+	read_large_number( "./large_number.dat", 1100 );
+	return 0;
+}
+
