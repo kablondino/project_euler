@@ -12,14 +12,13 @@ current = the_target
 i = 3
 
 while True:
-    while( not (current % i) ):
+    while(not(current % i)):
         current /= i
         high = i
 
-    if( current == 1 ):
+    if(current == 1):
         break
 
     i += 2
 
 print("Largest prime factor of %d is %d" % (the_target, high))
-

@@ -9,7 +9,7 @@
 
 n = 1000
 the_numbers = []
-for i in range(1,n):
+for i in range(1, n):
     if i % 3 == 0 and i % 5 != 0:
         the_numbers.append(i)
     if i % 5 == 0 and i % 3 != 0:
@@ -22,4 +22,3 @@ for j in range(len(the_numbers)):
     the_sum = the_sum + the_numbers[j]
 
 print(the_sum)
-

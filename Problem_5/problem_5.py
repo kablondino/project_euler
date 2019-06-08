@@ -8,7 +8,7 @@
 from collections import Counter
 
 
-def primes( limit ):
+def primes(limit):
     """
     Args:
         limit: upper limit in list of primes
@@ -29,7 +29,7 @@ def primes( limit ):
     return prime_list
 
 
-def prime_factorization( target ):
+def prime_factorization(target):
     """
     Args:
         target: the number that will be broken down into prime factors
@@ -41,7 +41,7 @@ def prime_factorization( target ):
 
     # Default dictionary less than or equal to one
     if target <= 1:
-        return { 1 : 1 }
+        return {1: 1}
 
     # Generate list of primes up to target
     possible_primes = primes(target)
@@ -51,7 +51,7 @@ def prime_factorization( target ):
     # Initialize dictionary with zero values
     prime_factors_dict = dict(zip(possible_primes, zeros))
 
-    ## Do the finding of the factors
+    # Do the finding of the factors
     # If target is even, take out all the 2's
     while target % 2 == 0:
         prime_factors_dict[2] += 1
@@ -69,7 +69,7 @@ def prime_factorization( target ):
 
     prime_factors_dict
     # Cut out the keys with value of zero, just for simplicity
-    return {x:y for x,y in prime_factors_dict.items() if y != 0}
+    return {x: y for x, y in prime_factors_dict.items() if y != 0}
 
 
 if __name__ == '__main__':
@@ -93,4 +93,3 @@ if __name__ == '__main__':
         answer *= k**max_powers_dict[k]
 
     print(answer)
-

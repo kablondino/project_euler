@@ -20,4 +20,4 @@ for i in range(1, 101):
 square_of_sum = square_of_sum**2
 
 print(f"Sum of squares: {sum_of_squares}\n" f"Square of sum: {square_of_sum}\n"
-        f"Difference: {square_of_sum - sum_of_squares}")
+      f"Difference: {square_of_sum - sum_of_squares}")

@@ -6,7 +6,7 @@
 """
 
 
-def is_prime( number ):
+def is_prime(number):
     # Exit out for negative numbers, 0, 1, and non-integers
     if number <= 1 or type(number) != int:
         return False
@@ -39,4 +39,3 @@ if __name__ == '__main__':
     target -= 2  # Eliminate the last increment of 2 from the last loop
 
     print(f"The {counter} prime number is {target}")
-
