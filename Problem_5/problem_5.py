@@ -8,12 +8,14 @@
 from collections import Counter
 
 
-def primes(limit):
+def primes_upto(limit):
     """
+    THIS FUNCTION IS DEPRICATED and slow. Use `Eratosthenes_Sieve`
+
     Args:
         limit: upper limit in list of primes
     Returns:
-        prime_list: list of prime numbers up to half of the limit
+        prime_list: list of prime numbers
     """
 
     prime_list = []
@@ -25,6 +27,36 @@ def primes(limit):
                     break
             else:
                 prime_list.append(val)
+
+    return prime_list
+
+
+def Eratosthenes_Sieve(limit):
+    """
+    Args:
+        limit: upper limit in list of primes
+    Returns:
+        prime_list: list of prime numbers, using the algorithm by Eratosthenes
+        https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
+    """
+    prime_list = []
+
+    # Boolean list in which the position represents is_prime. Initialize to
+    # everything is True (a prime)
+    prime_check = [True for i in range(limit + 1)]
+    # Initialize p
+    p = 2
+    while p**2 <= limit:
+        if prime_check[p] == True:
+            # Update all multiples of p up to the limit to not prime
+            for i in range(p**2, limit + 1, p):
+                prime_check[i] = False
+        p += 1
+
+    # Populate the returned prime_list
+    for p in range(2, limit + 1):
+        if prime_check[p]:
+            prime_list.append(p)
 
     return prime_list
 
@@ -44,7 +76,7 @@ def prime_factorization(target):
         return {1: 1}
 
     # Generate list of primes up to target
-    possible_primes = primes(target)
+    possible_primes = Eratosthenes_Sieve(target)
     # Create list of zeros of same length as primes list
     zeros = [0 for i in range(len(possible_primes))]
 
@@ -52,22 +84,21 @@ def prime_factorization(target):
     prime_factors_dict = dict(zip(possible_primes, zeros))
 
     # Do the finding of the factors
-    # If target is even, take out all the 2's
+    # If target is even, take out all the 2's and count them up
     while target % 2 == 0:
         prime_factors_dict[2] += 1
         target = target / 2
 
-    # If th
+    # Loop through odd values from 3 to the target, checking for multiples
     for i in range(3, int(target) + 1, 2):
         while target % i == 0:
             prime_factors_dict[i] += 1
             target = target / i
 
-    # If the remaining number is prime, add it to the list and exit
+    # If the remaining number is prime, add it to the list
     if target not in possible_primes and target > 2:
         prime_factors_dict = {target: 1}
 
-    prime_factors_dict
     # Cut out the keys with value of zero, just for simplicity
     return {x: y for x, y in prime_factors_dict.items() if y != 0}
 
