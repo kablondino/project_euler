@@ -10,6 +10,7 @@
 #include <stdlib.h>
 
 void Eratosthenes_Sieve( int, int[] );
+void count_multiplicity( int, int[], int[] );
 
 
 int main( int argc, char **argv ) {
@@ -18,12 +19,14 @@ int main( int argc, char **argv ) {
 	int limit = strtol( argv[1], &ptr, 10 );
 	// Initialize list to hold primes
 	int prime_list[limit];
+	int multiplicity[limit];
 
 	Eratosthenes_Sieve( limit, prime_list );
+	count_multiplicity( limit, prime_list, multiplicity );
 
 	for( int i = 0; i <= limit; i++ ) {
-		if( prime_list[i] == 1 )
-			printf("%d ", i);
+		if( prime_list[i] == 1 && multiplicity[i] != 0 )
+			printf("Number: %d\tMultiplicity: %d\n", i, multiplicity[i]);
 	}
 
 	return 0;
@@ -38,7 +41,7 @@ void Eratosthenes_Sieve( int limit, int prime_list[] ) {
 	prime_list[0] = 0;
 	prime_list[1] = 0;
 	// Initialize the rest of the list to be prime
-	for( int i = 2; i < limit; i++ ) {
+	for( int i = 2; i <= limit; i++ ) {
 		prime_list[i] = 1;
 	}
 
@@ -52,5 +55,37 @@ void Eratosthenes_Sieve( int limit, int prime_list[] ) {
 		}
 		p++;
 	}
+}
+
+
+void count_multiplicity( int target, int prime_list[], int multiplicity[] ) {
+	// Initialize multiplicity array to zeros
+	for( int i = 0; i <= target; i++ )
+		multiplicity[i] = 0;
+
+	// Boolean to be used when the target itself is prime
+	int last_prime_bool = 0;
+
+	if( target <= 1 ) {
+		multiplicity[1] = 1;
+		return;
+	}
+
+	while( target % 2 == 0 ) {
+		multiplicity[2] += 1;
+		target /= 2;
+		last_prime_bool = 1;
+	}
+
+	for( int j = 3; j <= target; j += 2 ) {
+		while( target % j == 0 ) {
+			multiplicity[j] += 1;
+			target /= j;
+			last_prime_bool = 1;
+		}
+	}
+
+	if( last_prime_bool == 0 )
+		multiplicity[target] = 1;
 }
 
