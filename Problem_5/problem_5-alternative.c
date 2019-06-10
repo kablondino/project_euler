@@ -8,37 +8,43 @@
 
 #include <stdio.h>
 
+
 #define ulong unsigned long
+
 
 ulong greatest_common_denominator( ulong, ulong );
 ulong least_common_multiple( ulong, ulong );
 
 
 int main() {
-	ulong x = 1;
+	ulong answer = 1;
 
+	// Find the least common multiple (answer) of all the integers up to 20
 	for( int i = 2; i <= 20; i++ )
-		x = least_common_multiple(x, (ulong) i);
+		answer = least_common_multiple(answer, (ulong) i);
 
-	printf("%lu\n", x);
+	printf("%lu\n", answer);
 
 	return 0;
 }
 
 
-ulong greatest_common_denominator( ulong m, ulong n ) {
-	while( m != n ) {
-		if( m > n )
-			m = m - n;
+ulong greatest_common_denominator( ulong x, ulong y ) {
+	// Returns, surprise, the greatest common denominator of the two parameters
+	while( x != y ) {
+		if( x > y )
+			x = x - y;
 		else
-			n = n - m;
+			y = y - x;
 	}
 
-	return m;
+	return x;
 }
 
 
 ulong least_common_multiple( ulong a, ulong b ) {
+	// Calculates the least common multiple of the two parameters
 	ulong this_gcd = greatest_common_denominator(a, b);
 	return (a*b / this_gcd);
 }
+
