@@ -16,7 +16,7 @@ All of the solutions will be attempted without use of proprietary functions, *i.
 | 9 |  |  |  |  |  |
 | 10|  |  |  |  |  |
 
-\* Use a different method/algorithm than the others.
+\* Uses a different method/algorithm than the others.
 
 * Each Python program is checked against `flake8`.
 
