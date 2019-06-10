@@ -13,7 +13,7 @@ All of the solutions will be attempted without use of proprietary functions, *i.
 | 6 |  |  |  |  |  |
 | 7 |  |  |  |  |  |
 | 8 |  |  |  |  |  |
-| 9 |  |  |  |  |  |
+| 9 | ✓ | ✓ | ✓ | ✓ | ✓ |
 | 10|  |  |  |  |  |
 
 \* Uses a different method/algorithm than the others.
