@@ -31,6 +31,7 @@ int main() {
 
 ulong greatest_common_denominator( ulong x, ulong y ) {
 	// Returns, surprise, the greatest common denominator of the two parameters
+	// This is Euclid's original GCD algorithm (subtraction-based)
 	while( x != y ) {
 		if( x > y )
 			x = x - y;
@@ -43,7 +44,7 @@ ulong greatest_common_denominator( ulong x, ulong y ) {
 
 
 ulong least_common_multiple( ulong a, ulong b ) {
-	// Calculates the least common multiple of the two parameters
+	// Transient variable to prevent calculation error in `return` statement
 	ulong this_gcd = greatest_common_denominator(a, b);
 	return (a*b / this_gcd);
 }
