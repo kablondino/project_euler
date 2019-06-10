@@ -11,7 +11,7 @@ PROGRAM problem_5
 
     answer = 1
 
-    do i = 2, 30
+    do i = 2, 20
         answer = least_common_multiple(answer, i)
     enddo
 
