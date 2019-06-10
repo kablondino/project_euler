@@ -5,44 +5,49 @@
 ! numbers from 1 to 20?
 !
 
-FUNCTION greatest_common_denominator( m, n )
-    implicit none
-    integer*16 greatest_common_denominator
-    integer*16 m, n
-
-    do while(m .ne. n)
-        if( m > n ) then
-            m = m - n
-        else
-            n = n - m
-        endif
-    enddo
-
-END FUNCTION greatest_common_denominator
-
-
-FUNCTION least_common_multiple( a, b )
-    implicit none
-    integer*16 greatest_common_denominator, least_common_multiple
-    integer*16 a, b, this_gcd
-
-    this_gcd = greatest_common_denominator( a, b )
-    least_common_multiple = a*b / this_gcd
-
-END FUNCTION least_common_multiple
-
-
 PROGRAM problem_5
     implicit none
-    integer*16 x, i
-    integer*16 greatest_common_denominator, least_common_multiple
+    integer*16 i, answer
 
-    do i = 2, 20
-        x = least_common_multiple(x, i)
+    answer = 1
+
+    do i = 2, 30
+        answer = least_common_multiple(answer, i)
     enddo
 
-    print*, x
+    print*, answer
+
+
+    CONTAINS
+        INTEGER*16 FUNCTION greatest_common_denominator( a, b )
+            integer*16, intent(in) :: a, b
+            integer*16 :: x, y
+
+            ! Copy over input(intent=in) parameters to variables to compute
+            x = a
+            y = b
+
+            ! Euclid's original GCD algorithm (subtraction-based)
+            do while( x .ne. y )
+                if( x > y ) then
+                    x = x - y
+                else
+                    y = y - x
+                endif
+            enddo
+
+            greatest_common_denominator = x
+
+        END FUNCTION greatest_common_denominator
+
+
+        INTEGER*16 FUNCTION least_common_multiple( a, b )
+            integer*16, intent(in) :: a, b
+
+            least_common_multiple = ((a*b) / greatest_common_denominator(a, b))
+
+        END FUNCTION least_common_multiple
+
 
 END PROGRAM problem_5
-
 
