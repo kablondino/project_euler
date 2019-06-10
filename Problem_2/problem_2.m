@@ -7,12 +7,10 @@
 % By considering the terms in the Fibonacci sequence whose values do
 % not exceed four million, find the sum of the even-valued terms.
 %
-close all
-clear; clc
+clc; clear; close all;
 
-
-i = 2;	% Counter
 the_sum = 0;
+i = 2;	% Counter
 
 while custom_fibonacci(i) <= 4.0e6
 	if mod(custom_fibonacci(i), 2) == 0
@@ -21,20 +19,19 @@ while custom_fibonacci(i) <= 4.0e6
 	i = i + 1;
 end
 
-fprintf( ['The sum of the even-valued terms of the Fibonacci sequence ', ...
-    'up to 4 million is %d\n'], the_sum)
+fprintf(['The sum of the even-valued terms of the Fibonacci sequence ', ...
+	'up to 4 million is %d\n'], the_sum)
 
 
 function Fib_number = custom_fibonacci( AN )
-% Produces the n-th Fibonacci number, by using the golden ratio
-
-    if AN <= 0
-        Fib_number = 0;
-    else if AN == 1
-        Fib_number = 1;
-    else
-        Fib_number = round(((1 + sqrt(5))^AN - (1 - sqrt(5))^AN) ...
-            / (2^AN * sqrt(5)));
-    end
-    end
+	% Produces the n-th Fibonacci number, by using the golden ratio
+	if AN <= 0
+		Fib_number = 0;
+	else if AN == 1
+		Fib_number = 1;
+	else
+		Fib_number = round(((1 + sqrt(5))^AN - (1 - sqrt(5))^AN) ...
+			/ (2^AN * sqrt(5)));
+	end
+	end
 end
