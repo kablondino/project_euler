@@ -97,6 +97,9 @@ void Eratosthenes_Sieve( int limit, int number_array_prime_bool[],
 			l++;
 		}
 	}
+
+	// Free up that space
+	free( number_array_prime_bool );
 }
 
 
