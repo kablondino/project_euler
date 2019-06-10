@@ -7,18 +7,13 @@
     Find the sum of all the multiples of 3 or 5 below 1000.
 """
 
-n = 1000
-the_numbers = []
-for i in range(1, n):
-    if i % 3 == 0 and i % 5 != 0:
-        the_numbers.append(i)
-    if i % 5 == 0 and i % 3 != 0:
-        the_numbers.append(i)
-    if i % 5 == 0 and i % 3 == 0:
-        the_numbers.append(i)
 
 the_sum = 0
-for j in range(len(the_numbers)):
-    the_sum = the_sum + the_numbers[j]
+
+# Cycle through every number up to 1000, and check if it's a multiple
+# Note, it's "multiples of 3 or 5 BELOW 1000"
+for i in range(1000):
+    if(i % 3 == 0 or i % 5 == 0):
+        the_sum += i
 
 print(the_sum)

@@ -6,21 +6,17 @@
 %
 % Find the sum of all the multiples of 3 or 5 below 1000.
 %
+clc; clear; close all;
 
+the_sum = 0;
 
-s3 = 0;
-s5 = 0;
-s15 = 0;
-
-for j = 0:1000
-	if mod(j, 3) == 0
-        s3 = s3 + j;
-    elseif mod(j, 5) == 0
-        s5 = s5 + j;
-    elseif mod(j, 15) == 0
-        s15 = s15 + j;
-    end
+% Cycle through every number up to 1000, and check if it's a multiple
+% Note, it's "multiples of 3 or 5 BELOW 1000"
+for i = 1 : 999
+	if mod(i, 3) == 0 | mod(i, 5) == 0
+		the_sum = the_sum + i;
+	end
 end
 
-disp( s3 + s5 - s15 )
+disp(the_sum)
 
