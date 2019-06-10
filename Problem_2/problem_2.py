@@ -12,6 +12,9 @@ import math
 
 
 def F(AN):
+    """
+        Calculate the AN-th Fibonacci number
+    """
     if AN <= 0:
         return 0
     elif AN == 1:
@@ -21,12 +24,13 @@ def F(AN):
                    / (2**AN * math.sqrt(5)))
 
 
-the_sum, i = 0, 2
+if __name__ == '__main__':
+    the_sum, i = 0, 2
 
-while F(i) <= 4.0e6:
-    if F(i) % 2 == 0:
-        the_sum = the_sum + F(i)
-    i = i + 1
+    while F(i) <= 4.0e6:
+        if F(i) % 2 == 0:
+            the_sum = the_sum + F(i)
+        i += 1
 
-print("The sum of the even-valued terms of the Fibonacci sequence up to 4 "
-      "million is", the_sum)
+    print("The sum of the even-valued terms of the Fibonacci sequence up to 4 "
+          "million is", the_sum)
