@@ -89,7 +89,7 @@ function prime_factors_dict = prime_factorization(target)
 	end
 
 	% If the remaining number is prime, add it to the list
-	if isKey(prime_factors_dict, target) & target > 2
+	if isKey(prime_factors_dict, target) && target > 2
 		prime_factors_dict(target) = 1;
 	end
 
@@ -139,7 +139,7 @@ end
 %	end
 %
 %	% If the remaining number is prime, add it to the list
-%	if ~ismember(target, prime_factors_keys) & target > 2
+%	if ~ismember(target, prime_factors_keys) && target > 2
 %		prime_factors_keys = [prime_factors_keys target];
 %		prime_factors_values = [prime_factors_values 1];
 %	end
