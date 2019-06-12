@@ -4,7 +4,7 @@
 %
 % What is the 10,001st (ten-thousand first) prime number?
 %%
-clc; clear; close all;
+clear; close all;
 
 
 counter = 1;
@@ -19,6 +19,5 @@ end
 
 target = target - 2;  % Eliminate the last increment of 2 from the last loop
 
-answer = sprintf('The %d prime number is %d', counter, target);
-disp(answer)
+fprintf('The %d prime number is %d\n', counter, target)
 
