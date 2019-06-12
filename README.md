@@ -4,18 +4,18 @@ All of the solutions will be attempted without use of proprietary functions, *i.
 
 
 ## Status
-| Problem | Python | C | Fortran | Go | Matlab/Octave |
-| ---: | :---: | :---: | :---: | :---: | :---: |
+| Problem | Python |   C   | Fortran |  Go   | Matlab/Octave |
+|  ---:   |  :---: | :---: |  :---:  | :---: |     :---:     |
 | 1 | ✓ | ✓ | ✓ | ✓ | ✓ |
 | 2 | ✓ | ✓ | ✓<sup>[\*](#different_algo)</sup> | ✓<sup>[\*](#different_algo)</sup> | ✓ |
-| 3 | ✓ |  |  |  | ✓ |
-| 4 | ✓ |  |  |  | ✓<sup>[†](#different_algo)</sup> |
-| 5 | ✓ |  |  |  | ✓ |
-| 6 | ✓ |  |  |  | ✓ |
-| 7 | ✓ |  |  |  | ✓<sup>[†](#different_algo)</sup> |
-| 8 | ✓ |  |  |  | ✓ |
+| 3 | ✓ | ✓ | ✓ | ✓ | ✓ |
+| 4 | ✓ | ✓ | ✓ | ✓ | ✓<sup>[†](#slow_program)</sup> |
+| 5 | ✓ | ✓<sup>[\*](#different_algo)</sup> | ✓ | ✓ | ✓ |
+| 6 | ✓ | ✓ | ✓ | ✓ | ✓ |
+| 7 | ✓ | ✓ | x | ✓ | ✓<sup>[†](#slow_program)</sup> |
+| 8 | ✓ | x | x | x | ✓ |
 | 9 | ✓ | ✓ | ✓ | ✓ | ✓ |
-| 10| ✓<sup>[‡](#outside_import)</sup> |  |  |  |  |
+| 10| ✓<sup>[‡](#outside_import)</sup> | x | x | x | x |
 
 <a name="different_algo">\*</a> Uses a different method/algorithm than the others.
 
