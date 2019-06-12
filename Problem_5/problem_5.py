@@ -47,7 +47,7 @@ def Eratosthenes_Sieve(limit):
     # Initialize p
     p = 2
     while p**2 <= limit:
-        if prime_check[p] == True:
+        if prime_check[p] is True:
             # Update all multiples of p up to the limit to not prime
             for i in range(p**2, limit + 1, p):
                 prime_check[i] = False
