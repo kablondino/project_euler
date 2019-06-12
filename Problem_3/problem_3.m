@@ -4,7 +4,7 @@
 %
 % What is the largest prime factor of the number 600851475143 ?
 %%
-
+clear; close all;
 
 the_target = 600851475143;
 current = the_target;
@@ -25,5 +25,6 @@ while true
 	i = i + 2;
 end
 
-sprintf('Largest prime factor of %d is %d', the_target, high)
+print_answer = sprintf('Largest prime factor of %d is %d', the_target, high);
+disp(print_answer)
 
