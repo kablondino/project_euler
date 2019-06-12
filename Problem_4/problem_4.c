@@ -1,8 +1,9 @@
-/*
+/*****************************************************************************
  * A palindromic number reads the same both ways. The largest palindrome made
  * from the product of two 2-digit numbers is 9009 = 91 × 99.
+ *
  * Find the largest palindrome made from the product of two 3-digit numbers.
-*/
+*****************************************************************************/
 
 /* NOTE that this is not the best way to solve this problem. A much better way
  * is by not bothering with converting to a string. See the alternative C

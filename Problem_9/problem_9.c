@@ -16,7 +16,7 @@ int main() {
 		for( int b = 1; b <= 1000 - a; b++ ) {
 			int c = 1000 - (a + b);
 			if( (a*a + b*b) == c*c && a < b ) {
-				printf("%d*%d*%d = %d", a, b, c, a*b*c);
+				printf("%d*%d*%d = %d\n", a, b, c, a*b*c);
 			}
 		}
 	}

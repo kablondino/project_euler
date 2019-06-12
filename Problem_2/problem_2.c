@@ -25,7 +25,7 @@ int main() {
 	}
 
 	printf("The sum of the even-valued terms of the Fibonacci sequence "
-		"up to 4 million is %lu", the_sum);
+		"up to 4 million is %lu\n", the_sum);
 	return 0;
 }
 

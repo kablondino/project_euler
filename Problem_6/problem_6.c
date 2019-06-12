@@ -1,4 +1,4 @@
-/*
+/*****************************************************************************
  * The sum of the squares of the first ten natural numbers is,
  * 		1^2 + 2^2 + ... + 10^2 = 385
  * The square of the sum of the first ten natural numbers is,
@@ -8,7 +8,7 @@
  *
  * Find the difference between the sum of the squares of the first one hundred
  * natural numbers and the square of the sum.
-*/
+*****************************************************************************/
 
 #include <stdio.h>
 #include <math.h>
@@ -26,7 +26,7 @@ int main() {
 	square_of_sum = pow(square_of_sum, 2);
 
 	// Print out answers
-	printf("Sum of squares: %d\nSquare of sum: %d\nDifference: %d",
+	printf("Sum of squares: %d\nSquare of sum: %d\nDifference: %d\n",
 			sum_of_squares, square_of_sum, square_of_sum - sum_of_squares);
 
 	return 0;
