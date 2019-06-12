@@ -4,7 +4,7 @@
 %
 % Find the largest palindrome made from the product of two 3-digit numbers.
 %%
-clc; clear; close all;
+clear; close all;
 
 
 max_palindrome = 0; final_i = 0; final_j = 0;
@@ -18,5 +18,5 @@ for i = 999 : -1 : 100
 	end
 end
 
-sprintf( '%d * %d = %d', final_i, final_j, max_palindrome )
+fprintf('%d * %d = %d', final_i, final_j, max_palindrome)
 

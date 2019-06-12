@@ -26,8 +26,7 @@
 % Find the thirteen adjacent digits in the 1000-digit number that have the
 % greatest product. What is the value of this product?
 %%
-
-clc; clear all; close all
+clear all; close all
 
 
 % Read in number from file as a string (char array)
@@ -51,6 +50,6 @@ for i = 1 : length(input_large_number) - length(adjacent_digits) + 1
 	end
 end
 
-format_display_digits = '%c*%c*%c*%c*%c*%c*%c*%c*%c*%c*%c*%c*%c = %d';
-disp(sprintf(format_display_digits, permanent_digits, largest_product))
+format_display_digits = '%c*%c*%c*%c*%c*%c*%c*%c*%c*%c*%c*%c*%c = %d\n';
+fprintf(format_display_digits, permanent_digits, largest_product)
 

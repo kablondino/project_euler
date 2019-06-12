@@ -25,6 +25,5 @@ while true
 	i = i + 2;
 end
 
-print_answer = sprintf('Largest prime factor of %d is %d', the_target, high);
-disp(print_answer)
+fprintf('Largest prime factor of %d is %d\n', the_target, high);
 

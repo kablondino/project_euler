@@ -9,6 +9,7 @@
 % Find the difference between the sum of the squares of the first one hundred
 % natural numbers and the square of the sum.
 %%
+clear; close all;
 
 sum_of_squares = 0;
 square_of_sum = 0;
@@ -20,6 +21,6 @@ end
 
 square_of_sum = square_of_sum^2;
 
-disp(sprintf('\tSum of squares: %d\n\tSquare of sum: %d\n\tDifference: %d', ...
-		sum_of_squares, square_of_sum, square_of_sum - sum_of_squares))
+fprintf('\tSum of squares: %d\n\tSquare of sum: %d\n\tDifference: %d\n', ...
+		sum_of_squares, square_of_sum, square_of_sum - sum_of_squares)
 
