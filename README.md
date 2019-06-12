@@ -6,17 +6,19 @@ All of the solutions will be attempted without use of proprietary functions, *i.
 | Problem | Python | C | Fortran | Go | Matlab/Octave |
 | ---: | :---: | :---: | :---: | :---: | :---: |
 | 1 | ✓ | ✓ | ✓ | ✓ | ✓ |
-| 2 | ✓ | ✓ | ✓\* | ✓\* | ✓ |
-| 3 |  |  |  |  |  |
-| 4 |  |  |  |  |  |
-| 5 |  |  |  |  |  |
-| 6 |  |  |  |  |  |
-| 7 |  |  |  |  |  |
-| 8 |  |  |  |  |  |
+| 2 | ✓ | ✓ | ✓<sup>[\*](#different_algo)</sup> | ✓<sup>[\*](#different_algo)</sup> | ✓ |
+| 3 | ✓ |  |  |  | ✓ |
+| 4 | ✓ |  |  |  | ✓<sup>[†](#different_algo)</sup> |
+| 5 | ✓ |  |  |  | ✓ |
+| 6 | ✓ |  |  |  | ✓ |
+| 7 | ✓ |  |  |  | ✓<sup>[†](#different_algo)</sup> |
+| 8 | ✓ |  |  |  | ✓ |
 | 9 | ✓ | ✓ | ✓ | ✓ | ✓ |
-| 10|  |  |  |  |  |
+| 10| ✓ |  |  |  |  |
 
-\* Uses a different method/algorithm than the others.
+<a name="different_algo">\*</a>: Uses a different method/algorithm than the others.
+
+<a name="slow_program">†</a>: Runs slowly
 
 * Each Python program is checked against `flake8`.
 
