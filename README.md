@@ -7,17 +7,15 @@ All of the solutions will be attempted without use of proprietary functions, *i.
 | Problem | Python |   C   | Fortran |  Go   | Matlab/Octave |
 |  ---:   |  :---: | :---: |  :---:  | :---: |     :---:     |
 | 1 | ✓ | ✓ | ✓ | ✓ | ✓ |
-| 2 | ✓ | ✓ | ✓<sup>[\*](#different_algo)</sup> | ✓<sup>[\*](#different_algo)</sup> | ✓ |
+| 2 | ✓ | ✓ | ✓ | ✓ | ✓ |
 | 3 | ✓ | ✓ | ✓ | ✓ | ✓ |
 | 4 | ✓ | ✓ | ✓ | ✓ | ✓ |
-| 5 | ✓ | ✓<sup>[\*](#different_algo)</sup> | ✓ | ✓ | ✓ |
+| 5 | ✓ | ✓ | ✓ | ✓ | ✓ |
 | 6 | ✓ | ✓ | ✓ | ✓ | ✓ |
 | 7 | ✓ | ✓ | x | ✓ | ✓<sup>[†](#slow_program)</sup> |
 | 8 | ✓ | x | x | x | ✓ |
 | 9 | ✓ | ✓ | ✓ | ✓ | ✓ |
 | 10| ✓<sup>[‡](#outside_import)</sup> | x | x | x | x |
-
-<a name="different_algo">\*</a> Uses a different method/algorithm than the others.
 
 <a name="slow_program">†</a> Runs slowly. Looking into using a different algorithm.
 
