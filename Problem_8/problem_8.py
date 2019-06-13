@@ -49,5 +49,5 @@ if __name__ == '__main__':
             permanent_digits = [y for y in adjacent_digits]
 
     # Fancy manner to print out answer
-    print("*".join(map(str, permanent_digits)) + " = " + str(largest_product)
-          + "\n", end='')
+    print("*".join(map(str, permanent_digits)) + " = " +
+          str(largest_product) + "\n", end='')

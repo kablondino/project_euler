@@ -13,4 +13,4 @@ for a in range(1, 1001):
     for b in range(1, 1001 - a):
         c = 1000 - (a + b)
         if a**2 + b**2 == c**2 and a < b:
-                print(f"{a}*{b}*{c} = {a*b*c}")
+            print("{0:d}*{1:d}*{2:d} = {3:d}".format(a, b, c, a*b*c))

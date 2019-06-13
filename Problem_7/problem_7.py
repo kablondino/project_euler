@@ -38,4 +38,4 @@ if __name__ == '__main__':
 
     target -= 2  # Eliminate the last increment of 2 from the last loop
 
-    print(f"The {counter} prime number is {target}")
+    print("The {0:d} prime number is {1:d}".format(counter, target))

@@ -20,8 +20,8 @@ def F(AN):
     elif AN == 1:
         return 1
     else:
-        return int(((1 + math.sqrt(5))**AN - (1 - math.sqrt(5))**AN)
-                   / (2**AN * math.sqrt(5)))
+        return int(((1 + math.sqrt(5))**AN - (1 - math.sqrt(5))**AN) /
+                   (2**AN * math.sqrt(5)))
 
 
 if __name__ == '__main__':
