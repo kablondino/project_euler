@@ -25,6 +25,7 @@ func main() {
 	fmt.Printf( "%d * %d = %d\n", final_i, final_j, max_palindrome )
 }
 
+
 func reverse_integer( forward_integer int ) int {
 	var remainder, reversed int
 
