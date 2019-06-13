@@ -44,7 +44,9 @@ def Eratosthenes_Sieve(limit):
     # Boolean list in which the position represents is_prime. Initialize to
     # everything is True (a prime)
     prime_check = [True for i in range(limit + 1)]
-    # Initialize p
+
+    # Incremental sieve in which the multiples of each prime `p` are generated
+    # by counting up from the square of the prime in increments of `p`
     p = 2
     while p**2 <= limit:
         if prime_check[p] is True:
