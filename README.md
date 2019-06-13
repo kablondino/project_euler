@@ -9,7 +9,7 @@ All of the solutions will be attempted without use of proprietary functions, *i.
 | 1 | ✓ | ✓ | ✓ | ✓ | ✓ |
 | 2 | ✓ | ✓ | ✓<sup>[\*](#different_algo)</sup> | ✓<sup>[\*](#different_algo)</sup> | ✓ |
 | 3 | ✓ | ✓ | ✓ | ✓ | ✓ |
-| 4 | ✓ | ✓ | ✓ | ✓ | ✓<sup>[†](#slow_program)</sup> |
+| 4 | ✓ | ✓ | ✓ | ✓ | ✓ |
 | 5 | ✓ | ✓<sup>[\*](#different_algo)</sup> | ✓ | ✓ | ✓ |
 | 6 | ✓ | ✓ | ✓ | ✓ | ✓ |
 | 7 | ✓ | ✓ | x | ✓ | ✓<sup>[†](#slow_program)</sup> |
