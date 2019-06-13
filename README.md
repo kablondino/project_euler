@@ -12,7 +12,7 @@ All of the solutions will be attempted without use of proprietary functions, *i.
 | 4 | ✓ | ✓ | ✓ | ✓ | ✓ |
 | 5 | ✓ | ✓ | ✓ | ✓ | ✓ |
 | 6 | ✓ | ✓ | ✓ | ✓ | ✓ |
-| 7 | ✓ | ✓ | x | ✓ | ✓<sup>[†](#slow_program)</sup> |
+| 7 | ✓ | ✓ | ✓ | ✓ | ✓<sup>[†](#slow_program)</sup> |
 | 8 | ✓ | x | x | x | ✓ |
 | 9 | ✓ | ✓ | ✓ | ✓ | ✓ |
 | 10| ✓<sup>[‡](#outside_import)</sup> | x | x | x | x |
