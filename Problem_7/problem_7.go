@@ -19,6 +19,7 @@ func is_prime ( number int ) bool {
 		return false
 	}
 
+    // Check for even numbers
 	if number == 2 {
 		return true
 	} else if number % 2 == 0 {
@@ -26,7 +27,7 @@ func is_prime ( number int ) bool {
 	}
 
 	// Loop for odd numbers
-	for i := 3; i < int(math.Sqrt(float64(number))) + 1; i++ {
+	for i := 3; i <= int(math.Sqrt(float64(number))); i++ {
 		if number % i == 0 { return false }
 	}
 

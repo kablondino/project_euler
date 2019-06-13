@@ -8,9 +8,10 @@
 
 def is_prime(number):
     # Exit out for negative numbers, 0, 1, and non-integers
-    if number <= 1 or type(number) != int:
+    if number <= 1:
         return False
 
+    # Check for even numbers
     if number == 2:
         return True
     elif number % 2 == 0:
@@ -18,7 +19,7 @@ def is_prime(number):
 
     # Initialize and loop for odd numbers
     i = 3
-    while i < int(number**0.5) + 1:
+    while i <= int(number**0.5):
         if number % i == 0:
             return False
         i += 1
