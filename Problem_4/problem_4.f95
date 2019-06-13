@@ -5,7 +5,7 @@
 ! Find the largest palindrome made from the product of two 3-digit numbers.
 !-----------------------------------------------------------------------------
 
-function is_palindrome( forward_integer )
+FUNCTION is_palindrome( forward_integer )
     implicit none
     integer*8 :: forward_integer, i, j
     logical :: is_palindrome
@@ -34,10 +34,10 @@ function is_palindrome( forward_integer )
     ! Default answer
     is_palindrome = .true.
 
-end function is_palindrome
+END FUNCTION is_palindrome
 
 
-program problem_4
+PROGRAM problem_4
     implicit none
     logical :: is_palindrome
     integer*8 :: i, j, final_i, final_j, max_palindrome
@@ -45,7 +45,7 @@ program problem_4
     max_palindrome = 0
 
     do i = 999, 100, -1
-        do j = 999, 100, -1
+        do j = i, 100, -1
             if( i*j > max_palindrome .and. is_palindrome(i*j)) then
                 max_palindrome = i*j
                 final_i = i
@@ -57,5 +57,5 @@ program problem_4
     write(*, '(I0, A, I0, A, I0)') final_i, " * ", final_j, " = ", &
         max_palindrome
 
-end program problem_4
+END PROGRAM problem_4
 
