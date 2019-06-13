@@ -28,5 +28,5 @@ for i = 999 : -1 : 100
 	end
 end
 
-fprintf('%d * %d = %d', final_i, final_j, max_palindrome)
+fprintf('%d * %d = %d\n', final_i, final_j, max_palindrome)
 
