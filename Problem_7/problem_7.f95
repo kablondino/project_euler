@@ -5,17 +5,18 @@
 ! What is the 10,001st (ten-thousand first) prime number?
 !-----------------------------------------------------------------------------
 
-FUNCTION is_prime( the_number )
+LOGICAL FUNCTION is_prime( the_number )
     implicit none
     integer :: the_number, i
-    logical :: is_prime
 
+	! Exit out for negative numbers, 0, and 1
     if( the_number <= 1 ) then
         is_prime = .false.
         return
     endif
 
-    if( the_number == 12 ) then
+    ! Check for even numbers
+    if( the_number == 2 ) then
         is_prime = .true.
         return
     else if( mod(the_number, 2) == 0 ) then
@@ -23,11 +24,14 @@ FUNCTION is_prime( the_number )
         return
     endif
 
-    do i = 3, NINT(sqrt(REAL(the_number))) + 1
+	! Loop for odd numbers
+    i = 3
+    do while( i <= NINT(sqrt(REAL(the_number))) )
         if( mod(the_number, i) == 0 ) then
             is_prime = .false.
             return
         endif
+        i = i + 1
     enddo
 
     is_prime = .true.
