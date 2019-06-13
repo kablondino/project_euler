@@ -1,10 +1,13 @@
 function is_prime = check_prime( number )
 	% Checks if the input number is prime
+
+	% Exit out for negative numbers, 0, and 1
 	if number <= 1 || ~isa(number, 'integer')
 		is_prime = false;
 		return;
 	end
 
+    % Check for even numbers
 	if number == uint64(2)
 		is_prime = true;
 		return;
@@ -13,19 +16,19 @@ function is_prime = check_prime( number )
 		return;
 	end
 
+    % Initialize and loop for odd numbers
 	i = uint64(3);
-	while i < uint64(floor(sqrt(double(number)))) + 1
+	sqrt_of_number = uint64(floor(sqrt(double(number))));
+	while i <= sqrt_of_number
 		if mod(number, i) == 0
 			is_prime = false;
 			return;
-			%break;
 		end
 		i = i + 1;
 	end
 
 	% If it went through all of the conditions, it must be prime
 	is_prime = true;
-	return;
     end
 end
 
