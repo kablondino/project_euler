@@ -21,6 +21,6 @@ program problem1
         endif
     enddo
 
-    print *, the_sum
+    write(*, '(i0)') the_sum
 end program problem1
 
