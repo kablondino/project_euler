@@ -26,3 +26,60 @@
 ! Find the thirteen adjacent digits in the 1000-digit number that have the
 ! greatest product. What is the value of this product?
 !-----------------------------------------------------------------------------
+
+PROGRAM problem_8
+    implicit none
+    integer, parameter :: limit = 1000, adjacent_length = 13
+    integer, dimension(limit) :: digit_array
+    integer, dimension(adjacent_length) :: permanent_digits
+    integer :: i, j, k
+    integer*16 :: current_product, largest_product
+
+    ! Initialize loop counter and largest_product
+    i = 1
+    largest_product = 1
+
+    ! Read in file and assign number to `digit_array`
+    open(1, file='large_number.dat')
+    read(1, '(50i1)') digit_array
+    close(1)
+
+    ! Outer loop for a set of `adjacent_length` digits
+    do while( i < (limit - adjacent_length + 1) )
+        ! Reset product
+        current_product = 1
+
+        ! Inner loop to do the calculations of one subset of digits
+        do j = i, (i + adjacent_length - 1)
+            ! Forces the loop to not go beyond the array
+            if( (i + adjacent_length - 1) > limit ) then
+                exit
+            endif
+
+            ! If we encounter a 0, exit now, since product will be 0
+            if( digit_array(j) == 0 ) then
+                i = i + adjacent_length - 1
+                exit
+            endif
+
+            ! Calculate the product for this subset
+            current_product = current_product * digit_array(j)
+
+            ! Loop through chunks of digits, and set the largest
+            ! Save those digits, also, for use in pretty printing
+            if( current_product > largest_product ) then
+                largest_product = current_product
+                permanent_digits = digit_array(i : (i + adjacent_length - 1))
+            endif
+        enddo
+        i = i + 1
+    enddo
+
+    ! Format and do all the pretty printing
+    do k = 1, adjacent_length - 1
+        write(*, '(i0,a)', advance="no") permanent_digits(k), "*"
+    enddo
+    write(*, '(i0, a,i0)') permanent_digits(adjacent_length), " = ", &
+        largest_product
+
+END PROGRAM problem_8
