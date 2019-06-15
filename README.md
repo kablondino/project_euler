@@ -13,7 +13,7 @@ All of the solutions will be attempted without use of proprietary functions, *i.
 | 5 | ✓ | ✓ | ✓ | ✓ | ✓ |
 | 6 | ✓ | ✓ | ✓ | ✓ | ✓ |
 | 7 | ✓ | ✓ | ✓ | ✓ | ✓<sup>[†](#slow_program)</sup> |
-| 8 | ✓ | x | x | ✓ | ✓ |
+| 8 | ✓ | x | ✓ | ✓ | ✓ |
 | 9 | ✓ | ✓ | ✓ | ✓ | ✓ |
 | 10| ✓<sup>[‡](#outside_import)</sup> | ✓ | ✓ | ✓ | ✓<sup>[†](#slow_program)</sup> |
 
