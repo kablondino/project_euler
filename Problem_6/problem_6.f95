@@ -28,9 +28,9 @@ PROGRAM square_sum
     square_of_sum = square_of_sum**2
 
     ! Print out answers
-    write(*, '(a, i0, /, a, i0, /, a, i0)') "Sum of squares: ", &
-        sum_of_squares, "Square of sum: ", square_of_sum, "Difference: ", &
-        square_of_sum - sum_of_squares
+    write(*, '(a, i0, a, i0, a, i0)') "Sum of squares: ", &
+        sum_of_squares, ", Square of sum: ", square_of_sum, &
+        ", Difference: ", square_of_sum - sum_of_squares
 
 END PROGRAM square_sum
 
