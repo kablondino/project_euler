@@ -12,7 +12,9 @@ counter = 1;
 target = uint64(3);
 
 while counter < 10001
-	if check_prime(target) == true
+	% My custom function `check_prime` is slow. Use built-in `isprime`.
+	%if check_prime(target) == true
+	if isprime(target) == true
 		counter = counter + 1;
 	end
 	target = target + 2;

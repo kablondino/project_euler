@@ -1,4 +1,6 @@
 function is_prime = check_prime( number )
+	%% THIS FUNCTION IS DEPRICATED. Both Matlab and Octave have the built-in
+	% `isprime(x) function, which is much faster.
 	% Checks if the input number is prime
 
 	% Exit out for negative numbers, 0, and 1
