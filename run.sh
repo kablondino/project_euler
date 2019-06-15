@@ -12,7 +12,7 @@ blue=$(tput setaf 4)
 pink=$(tput setaf 5)
 
 # Loop through each problem folder and run them
-for i in {1..6}
+for i in {1..10}
 do
 	cd Problem_$i
 	echo ----------------------------------${bold}PROBLEM $i${normal}----------------------------------
