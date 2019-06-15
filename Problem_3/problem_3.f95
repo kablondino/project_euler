@@ -7,10 +7,11 @@
 
 program problem3
     implicit none
-    integer*16 :: the_target, current
+    integer, parameter :: i16 = selected_int_kind(16)
+    integer(kind=i16), parameter :: the_target = 600851475143_i16
+    integer*16 :: current
     integer :: i, high
 
-    the_target = 600851475143
     current = the_target
 
     i = 3
