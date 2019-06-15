@@ -5,6 +5,7 @@
 % What is the 10,001st (ten-thousand first) prime number?
 %%
 clear; close all;
+tic
 
 
 counter = 1;
@@ -20,4 +21,6 @@ end
 target = target - 2;  % Eliminate the last increment of 2 from the last loop
 
 fprintf('The %d prime number is %d\n', counter, target)
+
+toc
 

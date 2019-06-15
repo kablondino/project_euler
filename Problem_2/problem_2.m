@@ -8,6 +8,8 @@
 % not exceed four million, find the sum of the even-valued terms.
 %%
 clear; close all;
+tic
+
 
 the_sum = 0;
 i = 2;	% Counter
@@ -21,4 +23,6 @@ end
 
 fprintf(['The sum of the even-valued terms of the Fibonacci sequence ', ...
 	'up to 4 million is %d\n'], the_sum)
+
+toc
 

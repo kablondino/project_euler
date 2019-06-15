@@ -7,6 +7,8 @@
 % Find the sum of all the multiples of 3 or 5 below 1000.
 %%
 clear; close all;
+tic
+
 
 the_sum = 0;
 
@@ -19,4 +21,6 @@ for i = 1 : 999
 end
 
 fprintf('%d\n', the_sum)
+
+toc
 

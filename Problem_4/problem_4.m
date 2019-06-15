@@ -5,6 +5,7 @@
 % Find the largest palindrome made from the product of two 3-digit numbers.
 %%
 clear; close all;
+tic
 
 
 max_palindrome = 0; final_i = 0; final_j = 0;
@@ -29,4 +30,6 @@ for i = 999 : -1 : 100
 end
 
 fprintf('%d * %d = %d\n', final_i, final_j, max_palindrome)
+
+toc
 

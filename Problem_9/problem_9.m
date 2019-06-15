@@ -8,6 +8,8 @@
 % Find the product abc.
 %%
 clear; close all;
+tic
+
 
 for a = 1 : 1000
 	for b = 1 : 1000 - a
@@ -19,4 +21,6 @@ for a = 1 : 1000
 end
 
 disp(answer)
+
+toc
 

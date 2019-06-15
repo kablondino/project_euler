@@ -10,6 +10,8 @@
 % natural numbers and the square of the sum.
 %%
 clear; close all;
+tic
+
 
 sum_of_squares = 0;
 square_of_sum = 0;
@@ -23,4 +25,6 @@ square_of_sum = square_of_sum^2;
 
 fprintf('Sum of squares: %d, Square of sum: %d, Difference: %d\n', ...
 		sum_of_squares, square_of_sum, square_of_sum - sum_of_squares)
+
+toc
 

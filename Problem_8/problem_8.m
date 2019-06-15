@@ -27,6 +27,7 @@
 % greatest product. What is the value of this product?
 %%
 clear all; close all
+tic
 
 
 % Read in number from file as a string (char array)
@@ -52,4 +53,6 @@ end
 
 format_display_digits = '%c*%c*%c*%c*%c*%c*%c*%c*%c*%c*%c*%c*%c = %d\n';
 fprintf(format_display_digits, permanent_digits, largest_product)
+
+toc
 

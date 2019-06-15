@@ -4,6 +4,7 @@
 % Find the sum of all the primes below two million.
 %%
 clear; close all;
+tic
 
 
 limit = 2000000;
@@ -30,4 +31,6 @@ end
 
 format long
 fprintf('%d\n', the_sum)
+
+toc
 

@@ -6,6 +6,7 @@
 % numbers from 1 to 20?
 %%
 clear; close all;
+tic
 
 
 upper_bound = 20;
@@ -33,4 +34,6 @@ for k = cell2mat(keys(max_powers_dict))
 end
 
 fprintf('%d\n', answer)
+
+toc
 

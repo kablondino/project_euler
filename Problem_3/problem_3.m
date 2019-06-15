@@ -5,6 +5,8 @@
 % What is the largest prime factor of the number 600851475143 ?
 %%
 clear; close all;
+tic
+
 
 the_target = 600851475143;
 current = the_target;
@@ -26,4 +28,6 @@ while true
 end
 
 fprintf('Largest prime factor of %d is %d\n', the_target, high);
+
+toc
 
