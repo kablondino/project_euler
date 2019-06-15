@@ -18,5 +18,5 @@ for i = 1 : 999
 	end
 end
 
-disp(the_sum)
+fprintf('%d\n', the_sum)
 

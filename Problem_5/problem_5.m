@@ -32,5 +32,5 @@ for k = cell2mat(keys(max_powers_dict))
 	answer = answer * k^(max_powers_dict(k));
 end
 
-disp(answer)
+fprintf('%d\n', answer)
 
