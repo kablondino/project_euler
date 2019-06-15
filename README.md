@@ -2,6 +2,8 @@ This repository contains the source code to the [Project Euler](https://projecte
 Currently, it includes Python, C, Fortran 95, Go, and Matlab/Octave.
 All of the solutions will be attempted without use of proprietary functions, *i.e.* no built-in Matlab functions that aren't in Octave.
 
+Use the `run.sh` script to run and time all of the problems.
+
 
 ## Status
 | Problem | Python |   C   | Fortran |  Go   | Matlab/Octave |
