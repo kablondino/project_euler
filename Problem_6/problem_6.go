@@ -28,7 +28,7 @@ func main() {
 
 	square_of_sum = int(math.Pow(float64(square_of_sum), 2))
 
-	fmt.Printf("Sum of squares: %d\nSquare of sum: %d\nDifference: %d\n",
+	fmt.Printf("Sum of squares: %d, Square of sum: %d, Difference: %d\n",
 			sum_of_squares, square_of_sum, square_of_sum - sum_of_squares)
 }
 

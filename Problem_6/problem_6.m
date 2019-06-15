@@ -21,6 +21,6 @@ end
 
 square_of_sum = square_of_sum^2;
 
-fprintf('\tSum of squares: %d\n\tSquare of sum: %d\n\tDifference: %d\n', ...
+fprintf('Sum of squares: %d, Square of sum: %d, Difference: %d\n', ...
 		sum_of_squares, square_of_sum, square_of_sum - sum_of_squares)
 

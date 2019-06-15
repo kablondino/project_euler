@@ -19,5 +19,5 @@ for i in range(1, 101):
 
 square_of_sum = square_of_sum**2
 
-print("Sum of squares: {0:d}\nSquare of sum: {1:d}\nDifference: {2:d}"
+print("Sum of squares: {0:d}, Square of sum: {1:d}, Difference: {2:d}"
       .format(sum_of_squares, square_of_sum, square_of_sum - sum_of_squares))
