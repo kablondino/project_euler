@@ -8,26 +8,19 @@ clear; close all;
 
 limit = 2000000;
 
-% Initialize the entire boolean sieve to false
-the_sieve = true(1,limit);
+% Initialize the entire boolean sieve to true
+% `.false.` means composite (not prime)
+the_sieve = true(1, limit);
 
-% Incremental sieve in which the multiples of each prime p are generated
-% by counting up from the square of the prime in increments of `p`
-%p = 2;
-%while p^2 <= limit
-%	if the_sieve(p) == true
-%		for j = p^2 : p : limit
-%			the_sieve(j) = false;
-%		end
-%	end
-%	p = p + 1;
-%end
+% The method for going up by increments of `p` is slow in Matlab/Octave.
+% Instead, set the composite multiples directly (easier to write).
 for n = 2 : sqrt(limit)
 	if the_sieve(n) == true
 		the_sieve(n*n : n : limit) = false;
 	end
 end
 
+% Sum the indices of the `the_sieve` array that are still .true.
 the_sum = 0;
 for j = 2 : limit
 	if the_sieve(j) == true
