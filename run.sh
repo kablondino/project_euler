@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Script to run, (and compile, if applicable) the languages indicated
+# Script to run, (and compile, if applicable) the programs in the indicated languages.
 # Matlab and Octave are separate, to show the runtime difference
 
 # Set up bold and normal font variables
@@ -10,6 +10,8 @@ red=$(tput setaf 1)
 green=$(tput setaf 2)
 blue=$(tput setaf 4)
 pink=$(tput setaf 5)
+cyan=$(tput setaf 6)
+
 
 # Loop through each problem folder and run them
 for i in {1..10}
@@ -58,16 +60,26 @@ do
 	printf "\n"
 
 	# Run Matlab
-	echo "${bold}${green}Matlab${normal}"
-	printf "\t"
-	matlab -nodesktop -nosplash -nojvm -r "run('problem_$i.m'); exit;" | tail -n +11
-	printf "\n"
+	if [ -x "$(command -v matlab)" ]
+	then
+		echo "${bold}${green}Matlab${normal}"
+		printf "\t"
+		matlab -nodesktop -nosplash -nojvm -r "run('problem_$i.m'); exit;" | tail -n +11
+		printf "\n"
+	else
+		printf "${bold}${cyan}Matlab is not found.${normal} Skipping...\n"
+	fi
 
 	# Run Octave
-	echo "${bold}${green}Octave${normal}"
-	printf "\t"
-	octave -qf problem_$i.m
-	printf "\n"
+	if [ -x "$(command -v octave)" ]
+	then
+		echo "${bold}${green}Octave${normal}"
+		printf "\t"
+		octave -qf problem_$i.m
+		printf "\n"
+	else
+		printf "${bold}${cyan}Octave is not found.${normal} Skipping...\n"
+	fi
 
 	cd ../
 done
