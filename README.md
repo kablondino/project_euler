@@ -15,9 +15,9 @@ All of the solutions will be attempted without use of proprietary functions, *i.
 | 7 | ✓ | ✓ | ✓ | ✓ | ✓<sup>[†](#slow_program)</sup> |
 | 8 | ✓ | x | x | x | ✓ |
 | 9 | ✓ | ✓ | ✓ | ✓ | ✓ |
-| 10| ✓<sup>[‡](#outside_import)</sup> | x | ✓ | x | ✓<sup>[†](#slow_program)</sup> |
+| 10| ✓<sup>[‡](#outside_import)</sup> | ✓ | ✓ | ✓ | ✓<sup>[†](#slow_program)</sup> |
 
-<a name="slow_program">†</a> Runs slowly. Looking into using a different algorithm.
+<a name="slow_program">†</a> Can be considered to run slowly. Looking into using a different algorithm.
 
 <a name="outside_import">‡</a> Relies on an imported function from another problem.
 
