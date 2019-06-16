@@ -69,7 +69,12 @@ func adjacent_digits_product( index, length int64, digit_array []int64 ) int64 {
 	var product int64 = 1
 
 	for i := int64(0); i < length; i++ {
-		product *= digit_array[index + i]
+		if digit_array[index + i] == 0 {
+			product = 0
+			break
+		} else {
+			product *= digit_array[index + i]
+		}
 	}
 
 	return product
@@ -89,7 +94,7 @@ func main() {
 	digit_array := get_digits()
 
 	// Loop through chunks of digits, and set the largest
-	for j := int64(0); j < int64(len(digit_array)) - adjacent_length; j++ {
+	for j := int64(0); j <= int64(len(digit_array)) - adjacent_length; j++ {
 		current_array := digit_array[j : j + adjacent_length]
 		product := adjacent_digits_product(j, adjacent_length, digit_array)
 
