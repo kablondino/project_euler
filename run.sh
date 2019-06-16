@@ -14,7 +14,7 @@ cyan=$(tput setaf 6)
 
 
 # Loop through each problem folder and run them
-for i in {1..10}
+for i in $(seq 1 10)
 do
 	cd Problem_$i
 	echo ----------------------------------${bold}PROBLEM $i${normal}----------------------------------
@@ -22,17 +22,17 @@ do
 	# Run Python
 	echo "${bold}${green}Python${normal}"
 	printf "\t${bold}"
-	time -pf "${normal}%e s" python3 problem_$i.py
+	\time -pf "${normal}%e s" python3 problem_$i.py
 	printf "\n"
 
 	# Compile and run C
 	echo "${bold}${blue}C${normal}"
 	printf "Compiling...\n"
 	gcc -Wall problem_$i.c -o problem_$i\_c -lm
-	if [ $? -eq 0 ]
+	if [ $? = 0 ]
 	then  # If compile succeeded
 		printf "Compile complete. Running...\n\t${bold}"
-		time -pf "${normal}%e s" ./problem_$i\_c
+		\time -pf "${normal}%e s" ./problem_$i\_c
 		rm problem_$i\_c
 	else
 		printf "${red}${bold}Compiling failed.${normal} Skipping..."
@@ -46,7 +46,7 @@ do
 	if [ $? -eq 0 ]
 	then  # If compile succeeded
 		printf "Compile complete. Running...\n\t${bold}"
-		time -pf "${normal}%e s" ./problem_$i\_f
+		\time -pf "${normal}%e s" ./problem_$i\_f
 		rm problem_$i\_f
 	else  # If compile failed
 		printf "${red}${bold}Compiling failed.${normal} Skipping..."
@@ -56,7 +56,7 @@ do
 	# Run Go
 	echo "${bold}${blue}Go${normal}"
 	printf "\t${bold}"
-	time -pf "${normal}%e s" go run problem_$i.go
+	\time -pf "${normal}%e s" go run problem_$i.go
 	printf "\n"
 
 	# Run Matlab
