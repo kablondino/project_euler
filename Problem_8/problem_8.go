@@ -95,13 +95,12 @@ func main() {
 
 	// Loop through chunks of digits, and set the largest
 	for j := int64(0); j <= int64(len(digit_array)) - adjacent_length; j++ {
-		current_array := digit_array[j : j + adjacent_length]
 		product := adjacent_digits_product(j, adjacent_length, digit_array)
 
 		if product > largest_product {
 			largest_product = product
             // Save the max digits, also, for use in pretty printing
-			permanent_digits = current_array
+			permanent_digits = digit_array[j : j + adjacent_length]
 		}
 	}
 
