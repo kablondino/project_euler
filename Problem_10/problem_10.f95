@@ -34,7 +34,7 @@ PROGRAM problem_10
         endif
     enddo
 
-    print*, the_sum
+    write(*, '(i0)') the_sum
 
 END PROGRAM problem_10
 

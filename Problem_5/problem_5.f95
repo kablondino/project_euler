@@ -16,7 +16,7 @@ PROGRAM problem_5
         answer = least_common_multiple(answer, i)
     enddo
 
-    print*, answer
+    write(*, '(i0)') answer
 
 
     CONTAINS
