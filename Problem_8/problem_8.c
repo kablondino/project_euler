@@ -28,7 +28,7 @@
 *****************************************************************************/
 
 #include <stdio.h>
-//#define uint unsigned long int
+
 
 long adjacent_digits_product( int, int, int[] );
 
@@ -59,8 +59,6 @@ int main() {
 		else { continue; }
 		if( buff[i] == '\0' ) { break; }
 	}
-	// Set the final character
-	input_large_number[buffer_index] = '\0';
 
 	// Get size of current `input_large_number`
 	int len_input_large_number = sizeof(input_large_number) /
