@@ -9,10 +9,10 @@ It assumes you are using the `gcc` and `gfortran` compilers, and have Matlab run
 ## Status
 | Problem | Python |   C   | Fortran |  Go   | Matlab/Octave | Julia |
 |  ---:   |  :---: | :---: |  :---:  | :---: |     :---:     | :---: |
-| 1 | ✓ | ✓ | ✓ | ✓ | ✓ |  |
-| 2 | ✓ | ✓ | ✓ | ✓ | ✓ |  |
-| 3 | ✓ | ✓ | ✓ | ✓ | ✓ |  |
-| 4 | ✓ | ✓ | ✓ | ✓ | ✓ |  |
+| 1 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| 2 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| 3 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| 4 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 | 5 | ✓ | ✓ | ✓ | ✓ | ✓ |  |
 | 6 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 | 7 | ✓ | ✓ | ✓ | ✓ | ✓<sup>[†](#slow_program)</sup> |  |
