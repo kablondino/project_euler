@@ -111,7 +111,7 @@ do
 	then
 		if [ -f "problem_$i.m" ]
 		then
-			echo "${bold}${green}Matlab${normal}"
+			echo "${bold}${green}Octave${normal}"
 			printf "\t"
 			octave -qf problem_$i.m
 		else
