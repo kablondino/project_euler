@@ -18,20 +18,17 @@ def is_palindrome(a, b):
 
 
 # Store all palindromes of this problem in one dictionary, with the keys being
-# a tuple of the factors and the values being the palindrome
+# the palindrome and the values being a tuple of the factors
 list_palindrome = {}
 
 # Start from 999, and loop downwards to find palindrome
 for i in range(999, 100, -1):
     for j in range(i, 100, -1):
         if is_palindrome(i, j) is True:
-            list_palindrome[(i, j)] = i*j  # Populate the dictionary
+            list_palindrome[i*j] = (i, j)  # Populate the dictionary
 
 # Set some convenience variables to aid in printing the answer
-first_factor = max(list_palindrome, key=list_palindrome.get)[0]
-second_factor = max(list_palindrome, key=list_palindrome.get)[1]
+largest_palindrome = max(list_palindrome)
+factors = list_palindrome[largest_palindrome]
 
-largest_palindrome = list_palindrome[max(list_palindrome,
-                                     key=list_palindrome.get)]
-
-print(first_factor, "*", second_factor, "=", largest_palindrome)
+print("%d * %d = %d" % (factors[0], factors[1], largest_palindrome))
