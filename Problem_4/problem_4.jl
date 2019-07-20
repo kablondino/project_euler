@@ -34,9 +34,7 @@ for i = 999 : -1 : 100
 end
 
 # Set some convenience variables to aid in printing the answer
-first_factor = maximum(list_palindrome)[2][1]
-second_factor = maximum(list_palindrome)[2][2]
-
 largest_palindrome = maximum(list_palindrome)[1]
+factors = maximum(list_palindrome)[2]
 
-println("$first_factor * $second_factor = $largest_palindrome")
+println("$(factors[1]) * $(factors[2]) = $largest_palindrome")
