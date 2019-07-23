@@ -15,7 +15,7 @@ It assumes you are using the `gcc` and `gfortran` compilers, and have Matlab run
 | 4 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 | 5 | ✓ | ✓ | ✓ | ✓ | ✓ |  |
 | 6 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-| 7 | ✓ | ✓ | ✓ | ✓ | ✓<sup>[†](#slow_program)</sup> |  |
+| 7 | ✓ | ✓ | ✓ | ✓ | ✓<sup>[†](#slow_program)</sup> | ✓ |
 | 8 | ✓ | ✓ | ✓ | ✓ | ✓ |  |
 | 9 | ✓ | ✓ | ✓ | ✓ | ✓ |  |
 | 10| ✓<sup>[‡](#outside_import)</sup> | ✓ | ✓ | ✓ | ✓<sup>[†](#slow_program)</sup> |  |
