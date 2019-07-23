@@ -111,7 +111,7 @@ def prime_factorization(target):
 if __name__ == '__main__':
     """ `max_powers_dict` will represent a dictionary with the maximum powers
     of each prime factorization for a particular target. For example, the prime
-    factorization of 16 are {2:4} and {2:1, 3:2}, respectively
+    factorization of 16 and 18 are {2:4} and {2:1, 3:2}, respectively
     The final result of this variable will be {2:4, 3:2} (The result of 2:1
     from the factorization of 18 is thrown out) """
     max_powers_dict = Counter({})
