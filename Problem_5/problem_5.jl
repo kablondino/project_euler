@@ -62,7 +62,7 @@ function prime_factorization(target)
 		target /= 2
 	end
 
-    # Loop through odd values from 3 to the target, checking for multiples
+	# Loop through odd values from 3 to the target, checking for multiples
 	for i = 3 : 2 : Int(target)
 		while target % i == 0
 			prime_factors_dict[i] += 1
@@ -87,23 +87,26 @@ end
 	from the factorization of 18 is thrown out)
 =#
 
-max_powers_dict = Dict{Int, Int}()
+if abspath(PROGRAM_FILE) == @__FILE__
+	max_powers_dict = Dict{Int, Int}()
 
-for i = 2 : 20
-	ith_factorization = prime_factorization(i)
-	for j in keys(ith_factorization)
-#		print("i = $i,\t$ith_factorization,\tj = $j, ith_[j] = $(ith_factorization[j])\n")
-		if ith_factorization[j] > get(max_powers_dict, j, 0)
-			max_powers_dict[j] = ith_factorization[j]
+	for i = 2 : 20
+		ith_factorization = prime_factorization(i)
+		for j in keys(ith_factorization)
+	#		print("i = $i,\t$ith_factorization,\tj = $j, ith_[j] = $(ith_factorization[j])\n")
+			if ith_factorization[j] > get(max_powers_dict, j, 0)
+				max_powers_dict[j] = ith_factorization[j]
+			end
 		end
 	end
+
+	answer = 1  # Initialize answer
+
+	# Multiply all of the keys^value of the max_powers_dict
+	for k in keys(max_powers_dict)
+		global answer *= k^(max_powers_dict[k])
+	end
+
+	println(answer)
 end
 
-answer = 1  # Initialize answer
-
-# Multiply all of the keys^value of the max_powers_dict
-for k in keys(max_powers_dict)
-	global answer *= k^(max_powers_dict[k])
-end
-
-println(answer)
