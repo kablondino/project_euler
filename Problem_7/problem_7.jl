@@ -47,4 +47,4 @@ end
 
 target -= 2  # Eliminate the last increment of 2 from the last loop
 
-print("The $counter prime number is $target")
+println("The $counter prime number is $target")
