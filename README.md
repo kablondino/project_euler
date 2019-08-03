@@ -18,7 +18,7 @@ It assumes you are using the `gcc` and `gfortran` compilers, and have Matlab run
 | 7 | ✓ | ✓ | ✓ | ✓ | ✓<sup>[†](#slow_program)</sup> | ✓ | ✓ |
 | 8 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | |
 | 9 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | |
-| 10| ✓<sup>[‡](#outside_import)</sup> | ✓ | ✓ | ✓ | ✓<sup>[†](#slow_program)</sup> | ✓ | |
+| 10| ✓<sup>[‡](#outside_import)</sup> | ✓ | ✓ | ✓ | ✓<sup>[†](#slow_program)</sup> | ✓ | ✓ |
 
 <a name="slow_program">†</a> Can be considered to run slowly. Looking into using a different algorithm.
 
