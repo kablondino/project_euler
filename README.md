@@ -9,8 +9,8 @@ It assumes you are using the `gcc` and `gfortran` compilers, and have Matlab run
 ## Status
 | Problem | Python |   C   | Fortran |  Go   | Matlab/Octave | Julia |  Awk  |
 |  ---:   |  :---: | :---: |  :---:  | :---: |     :---:     | :---: | :---: |
-| 1 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓<sup>[†](#slow_program)</sup> |
-| 2 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| 1 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| 2 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓<sup>[†](#slow_program)</sup> |
 | 3 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 | 4 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 | 5 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
