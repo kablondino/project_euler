@@ -15,11 +15,11 @@ int is_prime( int number ) {
 	// Exit out for negative numbers, 0, and 1
 	if( number <= 1 ) { return 0; }
 
-    // Check for even numbers
+	// Check for even numbers
 	if( number == 2 ) { return 1; }
 	else if( number % 2 == 0 ) { return 0; }
 
-    // Initialize and loop for odd numbers
+	// Initialize and loop for odd numbers
 	int i = 3;
 	while( i <= sqrt(number) ) {
 		if( number % i == 0 ) {

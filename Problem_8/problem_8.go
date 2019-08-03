@@ -101,12 +101,12 @@ func main() {
 
 		if product > largest_product {
 			largest_product = product
-            // Save the max digits, also, for use in pretty printing
+			// Save the max digits, also, for use in pretty printing
 			permanent_digits = digit_array[j : j + adjacent_length]
 		}
 	}
 
-    // Format and do all the pretty printing
+	// Format and do all the pretty printing
 	for k := int64(0); k < adjacent_length - 1; k++ {
 		fmt.Printf("%d*", permanent_digits[k])
 	}

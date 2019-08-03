@@ -90,7 +90,7 @@ int main() {
 		}
 	}
 
-    // Format and do all the pretty printing
+	// Format and do all the pretty printing
 	for( int k = 0; k < adjacent_length - 1; k++ ) {
 		printf("%d*", permanent_digits[k]);
 	}

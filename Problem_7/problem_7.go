@@ -21,7 +21,7 @@ func is_prime ( number int ) bool {
 		return false
 	}
 
-    // Check for even numbers
+	// Check for even numbers
 	if number == 2 {
 		return true
 	} else if number % 2 == 0 {
@@ -39,17 +39,17 @@ func is_prime ( number int ) bool {
 
 
 func main() {
-    // Initialize the looping counter and the intended answer
+	// Initialize the looping counter and the intended answer
 	var counter int = 1
-    var target int = 3
+	var target int = 3
 
 	for ; counter < 10001; {
-        if is_prime(target) == true { counter += 1 }
-        target += 2  // Increment to the next odd number
+		if is_prime(target) == true { counter += 1 }
+		target += 2  // Increment to the next odd number
 	}
 
-    target -= 2  // Eliminate the last increment of 2 from the last loop
+	target -= 2  // Eliminate the last increment of 2 from the last loop
 
-    fmt.Printf("The %d prime number is %d\n", counter, target)
+	fmt.Printf("The %d prime number is %d\n", counter, target)
 }
 
