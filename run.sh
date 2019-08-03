@@ -1,7 +1,49 @@
 #!/bin/sh
 
-# Script to run, (and compile, if applicable) the programs in the indicated languages.
-# Matlab and Octave are separate, to show the runtime difference
+usage() {
+	cat <<EOF
+
+Script to run, (and compile, if applicable) the programs in the indicated languages.
+Matlab and Octave are separate, to show the runtime difference
+
+Usage: $0 [options] [--]
+
+Arguments:
+
+  -h, --help
+    Display this usage information and exit.
+
+  -s <val>, --start <val>, --start=<val>
+    Problem number to start on. Defaults to 1.
+
+  -e <val>, --end <val>, --end=<val>
+    Problem number to end on. Defaults to 10.
+EOF
+}
+
+# Logging and error handling
+log() { printf '%s\n' "$*"; }
+error() { log "ERROR: $*" >&2; }
+fatal() { error "$*"; exit 1; }
+usage_fatal() { error "$*"; usage >&2; exit 1; }
+
+# Parse options
+start=1
+end=10
+while [ "$#" -gt 0 ]; do
+	arg=$1
+	case $1 in
+		--*'='*) shift; set -- "${arg%%=*}" "${arg#*=}" "$@"; continue;;
+		-s|--start) shift; start=$1;;
+		-e|--end) shift; end=$1;;
+		-h|--help) usage; exit 0;;
+		--) shift; break;;
+		-*) usage_fatal "unknown option: '$1'";;
+		*) break;;  # Reached the end of the list
+	esac
+	shift || usage_fatal "option '${arg}' requires a value"
+done
+
 
 # Set up bold and normal font variables
 bold=$(tput bold)
@@ -13,12 +55,8 @@ pink=$(tput setaf 5)
 cyan=$(tput setaf 6)
 
 
-# Define the problem range to be run, from command line arguments
-starting_problem=${1:-1}
-ending_problem=${2:-10}
-
 # Loop through each problem folder and run them
-for i in $(seq $starting_problem $ending_problem); do
+for i in $(seq $start $end); do
 	cd Problem_$i
 	printf -- "---------------------------------- ${bold}PROBLEM $i${normal} ----------------------------------\n"
 

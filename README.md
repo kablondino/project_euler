@@ -3,7 +3,10 @@ Currently, it includes Python, C, Fortran 95, Go, Matlab/Octave, Julia, and Awk.
 All of the solutions will be attempted without use of proprietary functions, *i.e.* no built-in Matlab functions that aren't in Octave.
 
 Use the `run.sh` script to run and time all of the problems.
-It assumes you are using the `gcc` and `gfortran` compilers, and have Matlab runnable from the terminal as `matlab`.
+It assumes you are using the `gcc` and `gfortran` compilers, and will check if Matlab is runnable from the terminal as `matlab`.
+
+It can now be run for a specific range of problems.
+Run `./run.sh -h` or `./run.sh --help` to find out how to do this.
 
 
 ## Status
