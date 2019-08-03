@@ -10,16 +10,16 @@
 #=============================================================================
 
 BEGIN{
-
 	the_sum = 0
-	printf "%d\n", the_sum
 
-	for(i = 1; i <= 1000; i++) {
+	# Cycle through every number up to 1000, and check if it's a multiple
+	# Note, it's "multiples of 3 or 5 BELOW 1000"
+	for(i = 1; i < 1000; i++) {
 		if(i % 3 == 0 || i % 5 == 0) {
 			the_sum += i
 		}
 	}
 
 	printf "%d\n", the_sum
-#	exit 1
 }
+
