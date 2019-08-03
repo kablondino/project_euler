@@ -13,9 +13,12 @@ pink=$(tput setaf 5)
 cyan=$(tput setaf 6)
 
 
+# Define the problem range to be run, from command line arguments
+starting_problem=${1:-1}
+ending_problem=${2:-10}
+
 # Loop through each problem folder and run them
-for i in $(seq 1 10)
-do
+for i in $(seq $starting_problem $ending_problem); do
 	cd Problem_$i
 	printf -- "---------------------------------- ${bold}PROBLEM $i${normal} ----------------------------------\n"
 
