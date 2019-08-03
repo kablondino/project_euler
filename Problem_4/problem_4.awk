@@ -11,29 +11,20 @@
 
 
 # Function to check if product is palindrome
-function is_palindrome(a, b) {
-	# Reverse the string
-	for(i = length(a*b); i != 0; i--) {
-		x = x substr(a*b, i, 1);
-	}
-	# Check if it is itself backwards
-	if(a*b == x) { return true }
-	else { return false }
-}
-
-
-function reverse_integer(forward_integer) {
-	remainder = 0
-	reversed = 0
-
-	while(forward_integer != 0) {
-		remainder = forward_integer % 10
-		reversed = reversed*10 + remainder
-		forward_integer /= 10
-	}
-
-	return reversed
-}
+#function is_palindrome(forward_integer) {
+#	# Initialize reversed integer
+#	reversed_integer = ""
+#
+#	# Reverse the string
+#	for(i = length(forward_integer); i > 0; i--) {
+#		reversed_integer = reversed_integer substr(forward_integer, i, 1)
+#	}
+#
+#	# Check if it is itself backwards
+##	printf "Forward: %d, Reversed: %d\n", forward_integer, reversed_integer
+#	if(forward_integer == reversed_integer) { return 1 }
+#	else { return 0 }
+#}
 
 
 BEGIN {
@@ -42,12 +33,21 @@ BEGIN {
 	final_j = 0
 
 	for(i = 999; i >= 100; i--) {
-		for(j = ; j >= 100; j--) {
-			if(i*j == reverse_integer(i*j)) {
+		for(j = i; j >= 1; j--) {
+			# Reset the reversed_integer
+			reversed_integer = ""
+
+			# Reverse the string and store it
+			for(k = length(i*j); k > 0; k--) {
+				reversed_integer = reversed_integer substr(i*j, k, 1)
+			}
+
+			if(i*j == reversed_integer && max_palindrome < i*j) {
 				final_i = i
 				final_j = j
 				max_palindrome = i*j
 			}
+
 		}
 	}
 
