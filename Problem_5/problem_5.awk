@@ -11,38 +11,36 @@
 #=============================================================================
 
 
-function Eratosthenes_Sieve(limit) {
-	# Boolean list in which the position represents is_prime. Initialize to
-	# everything is True (a prime)
-	for(i = 1; i <= limit; i++) {
-		prime_check[i] = 1
-	}
-
-	# Incremental sieve in which the multiples of each prime `p` are generated
-	# by counting up from the square of the prime in increments of `p`
-	p = 2
-	while(p^2 <= limit) {
-		if(prime_check[p] == 1) {
-			# Update all multiples of p up to the limit to not prime
-			for(j = p^2; j <= limit; j += p) {
-				prime_check[j] = 0
-			}
+function greatest_common_denominator(x, y) {
+	# Returns, surprise, the greatest common denominator of the two parameters
+	# This is Euclid's original GCD algorithm (subtraction-based)
+	while(x != y) {
+		if(x > y) {
+			x = x - y
 		}
-		p += 1
-	}
-
-	# Populate the returned prime_list
-	for(p = 2; p <= limit; p++) {
-		if(prime_check[p] == 1) {
-			prime_list[p] = p
+		else {
+			y = y - x
 		}
 	}
 
-	return prime_list
+	return x
+}
+
+
+function least_common_multiple(a, b) {
+	# Transient variable to prevent calculation error in `return` statement
+	this_gcd = greatest_common_denominator(a, b);
+	return (a*b / this_gcd);
 }
 
 
 BEGIN {
-	printf "%d\n", Eratosthenes_Sieve(100)
+	answer = 1
+
+	# Find the least common multiple (answer) of all the integers up to 20
+	for(i = 2; i <= 20; i++) {
+		answer = least_common_multiple(answer, i)
+	}
+	printf "%d\n", answer
 }
 

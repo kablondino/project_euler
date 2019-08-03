@@ -13,7 +13,7 @@ It assumes you are using the `gcc` and `gfortran` compilers, and have Matlab run
 | 2 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 | 3 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 | 4 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | |
-| 5 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | |
+| 5 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 | 6 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 | 7 | ✓ | ✓ | ✓ | ✓ | ✓<sup>[†](#slow_program)</sup> | ✓ | ✓ |
 | 8 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | |
