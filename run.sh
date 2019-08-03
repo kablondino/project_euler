@@ -133,6 +133,17 @@ do
 	printf "\n"
 
 
+	# Run awk
+	if [ -f "problem_$i.awk" ]
+	then
+		printf "${bold}${green}Awk${normal}\n\t${bold}"
+		\time -pf "${normal}%e s" ./problem_$i.awk
+	else
+		printf "${bold}${cyan}problem_$i.awk file is not found.${normal} Skipping...\n\n"
+	fi
+	printf "\n"
+
+
 	cd ../
 done
 
