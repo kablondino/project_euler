@@ -13,7 +13,7 @@ int main() {
 	const unsigned long long int the_target = 600851475143;
 	unsigned long long int current_number = the_target;
 
-	int i = 3;    // Divisor
+	int i = 3;  // Divisor
 	int high = 0; // Highest factor, to be assigned
 
 	while( 1 )
