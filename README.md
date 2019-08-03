@@ -10,7 +10,7 @@ It assumes you are using the `gcc` and `gfortran` compilers, and have Matlab run
 | Problem | Python |   C   | Fortran |  Go   | Matlab/Octave | Julia |  Awk  |
 |  ---:   |  :---: | :---: |  :---:  | :---: |     :---:     | :---: | :---: |
 | 1 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | |
-| 2 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | |
+| 2 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 | 3 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | |
 | 4 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | |
 | 5 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | |
