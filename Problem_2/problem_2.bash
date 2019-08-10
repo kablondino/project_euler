@@ -10,11 +10,25 @@
 #	By considering the terms in the Fibonacci sequence whose values do
 #	not exceed four million, find the sum of the even-valued terms.
 #=============================================================================
-# Binet's formula, but the rounding does not work
-#function F(AN) {
-#	if(AN <= 0) {
-#		return 0
-#	}
-#	else if(AN == 1) {
 
 
+# Binet's formula
+function F() {
+	if [ $1 -le 0 ]; then
+		$2=$((0))
+	elif [ $1 -eq 1 ]; then
+		$2=$((1))
+	else
+		$2=$(( 2 ))
+#		$2=$(( ( (1 + 5**0.5)**AN - (1 - sqrt(5) )**AN) / (2**AN * 5**0.5) ))
+	fi
+}
+
+the_sum=0
+i=2
+current=0
+echo $current
+F $i $current
+echo "$current"
+
+#while [ $((current)) -le 4000000 ]; then
