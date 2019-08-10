@@ -10,3 +10,15 @@
 #=============================================================================
 
 
+the_sum=0
+
+# Cycle through every number up to 1000, and check if it's a multiple
+# Note, it's "multiples of 3 or 5 BELOW 1000"
+for i in $(seq 1 999); do
+	if [ "$((i % 3))" -eq 0 ] || [ "$((i % 5))" -eq 0 ]; then
+		((the_sum += $i))
+	fi
+done
+
+printf "%d\n" $the_sum
+

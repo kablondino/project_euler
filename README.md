@@ -12,7 +12,7 @@ Run `./run.sh -h` or `./run.sh --help` to find out how to do this.
 ## Status
 | Problem | Python |   C   | Fortran |  Go   | Matlab/Octave | Julia |  Awk  |  Bash  |
 |  ---:   |  :---: | :---: |  :---:  | :---: |     :---:     | :---: | :---: | :---: |
-| 1 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |
+| 1 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 | 2 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓<sup>[†](#slow_program)</sup> |  |
 | 3 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |
 | 4 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |
