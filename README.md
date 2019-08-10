@@ -10,18 +10,18 @@ Run `./run.sh -h` or `./run.sh --help` to find out how to do this.
 
 
 ## Status
-| Problem | Python |   C   | Fortran |  Go   | Matlab/Octave | Julia |  Awk  |
-|  ---:   |  :---: | :---: |  :---:  | :---: |     :---:     | :---: | :---: |
-| 1 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-| 2 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓<sup>[†](#slow_program)</sup> |
-| 3 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-| 4 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-| 5 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-| 6 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-| 7 | ✓ | ✓ | ✓ | ✓ | ✓<sup>[†](#slow_program)</sup> | ✓ | ✓ |
-| 8 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-| 9 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-| 10| ✓<sup>[‡](#outside_import)</sup> | ✓ | ✓ | ✓ | ✓<sup>[†](#slow_program)</sup> | ✓<sup>[‡](#outside_import)</sup> | ✓ |
+| Problem | Python |   C   | Fortran |  Go   | Matlab/Octave | Julia |  Awk  |  Bash  |
+|  ---:   |  :---: | :---: |  :---:  | :---: |     :---:     | :---: | :---: | :---: |
+| 1 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |
+| 2 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓<sup>[†](#slow_program)</sup> |  |
+| 3 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |
+| 4 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |
+| 5 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |
+| 6 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |
+| 7 | ✓ | ✓ | ✓ | ✓ | ✓<sup>[†](#slow_program)</sup> | ✓ | ✓ |  |
+| 8 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |
+| 9 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |
+| 10| ✓<sup>[‡](#outside_import)</sup> | ✓ | ✓ | ✓ | ✓<sup>[†](#slow_program)</sup> | ✓<sup>[‡](#outside_import)</sup> | ✓ |  |
 
 <a name="slow_program">†</a> Can be considered to run slowly. Looking into using a different algorithm.
 
