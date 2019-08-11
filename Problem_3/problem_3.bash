@@ -9,3 +9,23 @@
 #=============================================================================
 
 
+the_target=600851475143
+current=$the_target
+
+i=3
+
+while :; do
+	while [ $(( current % i )) -eq 0 ]; do
+		current=$(( current / i ))
+		high=$i
+	done
+
+	if [ $current -eq 1 ]; then
+		break
+	fi
+
+	i=$(( i + 2 ))
+done
+
+printf "Largest prime factor of %d is %d\n" $the_target $high
+
