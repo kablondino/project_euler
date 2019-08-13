@@ -20,7 +20,7 @@ Run `./run.sh -h` or `./run.sh --help` to find out how to do this.
 | 6 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |
 | 7 | ✓ | ✓ | ✓ | ✓ | ✓<sup>[†](#slow_program)</sup> | ✓ | ✓ |  |
 | 8 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |
-| 9 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |
+| 9 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 | 10| ✓<sup>[‡](#outside_import)</sup> | ✓ | ✓ | ✓ | ✓<sup>[†](#slow_program)</sup> | ✓<sup>[‡](#outside_import)</sup> | ✓ |  |
 
 <a name="slow_program">†</a> Can be considered to run slowly. Looking into using a different algorithm.
