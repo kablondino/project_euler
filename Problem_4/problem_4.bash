@@ -16,7 +16,7 @@ final_j=0
 
 for (( i=999; i>=100; i-- )); do
 	(( i_squared = i*i ))  # Define possible answer
-	for (( j=i; j<1000; j++ )); do  # Inner loop to count UPWARDS with `j`
+	for (( j=i; j<=999; j++ )); do  # Inner loop to count UPWARDS with `j`
 		(( i_squared += i ))  # Increment possible answer by `i`
 
 		# Pre-screen by making sure the possible answer is bigger than current
@@ -28,7 +28,7 @@ for (( i=999; i>=100; i-- )); do
 				# Check if it's a full palindrome, and then set answer
 				if [ "$i_squared" -eq "$(echo -n "$i_squared" | rev)" ]; then
 					final_i=$i
-					final_j=$j
+					final_j=$(( j + 1 ))  # 1 bigger, since decrementing j
 					max_palindrome=$i_squared
 				fi
 			fi
