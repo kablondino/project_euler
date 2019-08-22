@@ -13,9 +13,9 @@ Run `./run.sh -h` or `./run.sh --help` to find out how to do this.
 | Problem | Python |   C   | Fortran |  Go   | Matlab/Octave | Julia |  Awk  |  Bash  |
 |  ---:   |  :---: | :---: |  :---:  | :---: |     :---:     | :---: | :---: | :---: |
 | 1 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-| 2 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓<sup>[†](#slow_program)</sup> |  |
+| 2 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓<sup>[†](#slow_program)</sup> | ✓ |
 | 3 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-| 4 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |
+| 4 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 | 5 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |
 | 6 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |
 | 7 | ✓ | ✓ | ✓ | ✓ | ✓<sup>[†](#slow_program)</sup> | ✓ | ✓ |  |
