@@ -177,6 +177,15 @@ for i in $(seq $start $end); do
 	printf "\n"
 
 
+	# Run bash
+	if [ -f "problem_$i.bash" ]; then
+		printf "${bold}${green}Bash${normal}\n\t${bold}"
+		\time -pf "${normal}%e s" ./problem_$i.bash
+	else
+		printf "${bold}${cyan}problem_$i.bash file is not found.${normal} Skipping...\n\n"
+	fi
+	printf "\n"
+
 	cd ../
 done
 
