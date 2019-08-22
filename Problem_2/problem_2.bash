@@ -12,23 +12,22 @@
 #=============================================================================
 
 
-# Binet's formula
-function F() {
-	if [ $1 -le 0 ]; then
-		$2=$((0))
-	elif [ $1 -eq 1 ]; then
-		$2=$((1))
-	else
-		$2=$(( 2 ))
-#		$2=$(( ( (1 + 5**0.5)**AN - (1 - sqrt(5) )**AN) / (2**AN * 5**0.5) ))
-	fi
-}
-
 the_sum=0
-i=2
-current=0
-echo $current
-F $i $current
-echo "$current"
+previous=1
+current=1
 
-#while [ $((current)) -le 4000000 ]; then
+while [ "$current" -le 4000000 ]; do
+	# Fibonacci
+	temporary=$current
+	(( current += previous ))
+	previous=$temporary
+
+	# Check for even values, and add to `the_sum`
+	if [ $(( $current % 2 )) -eq 0 ]; then
+		(( the_sum += current ))
+	fi
+done
+
+printf "The sum of the even-valued terms of the Fibonacci sequence up to "
+printf "4 million is %d\n" $the_sum
+

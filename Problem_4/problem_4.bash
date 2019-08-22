@@ -8,18 +8,6 @@
 #
 #	Find the largest palindrome made from the product of two 3-digit numbers.
 #=============================================================================
-# Function to check if product is palindrome
-
-
-function is_palindrome() {
-	local reversed_integer=$(echo $1 | rev)
-
-	if [ $reversed_integer -eq $1 ]; then
-		return 0
-	else
-		return 1
-	fi
-}
 
 
 max_palindrome=0
@@ -27,11 +15,23 @@ final_i=0
 final_j=0
 
 for (( i=999; i>=100; i-- )); do
-	for (( j=i; j>=100; j-- )); do
-		if [ $(is_palindrome $(( i*j ))) -eq 0 ]; then
-			final_i=$i
-			final_j=$j
-			max_palindrome=$(( i*j ))
+	(( i_squared = i*i ))  # Define possible answer
+	for (( j=i; j<1000; j++ )); do  # Inner loop to count UPWARDS with `j`
+		(( i_squared += i ))  # Increment possible answer by `i`
+
+		# Pre-screen by making sure the possible answer is bigger than current
+		if [ "$i_squared" -gt "$max_palindrome" ]; then
+
+			# Check if the first and last digits are the same (to save time)
+			if [ "${i_squared:5:1}" -eq "${i_squared:0:1}" ]; then
+
+				# Check if it's a full palindrome, and then set answer
+				if [ "$i_squared" -eq "$(echo -n "$i_squared" | rev)" ]; then
+					final_i=$i
+					final_j=$j
+					max_palindrome=$i_squared
+				fi
+			fi
 		fi
 	done
 done
