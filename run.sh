@@ -27,6 +27,15 @@ error() { log "ERROR: $*" >&2; }
 fatal() { error "$*"; exit 1; }
 usage_fatal() { error "$*"; usage >&2; exit 1; }
 
+is_timedout() { 
+	if [ $? -eq 124 ]; then
+		printf "${red}Timed out${normal}\n\t"
+	else
+		continue
+	fi
+}
+
+
 # Parse options
 start=1
 end=10
@@ -64,7 +73,8 @@ for i in $(seq $start $end); do
 	# Run Python
 	if [ -f "problem_$i.py" ]; then
 		printf "${bold}${green}Python${normal}\n\t${bold}"
-		\time -pf "${normal}%e s" python3 problem_$i.py
+		timeout 3 \time -pf "${normal}%e s" python3 problem_$i.py
+		is_timedout
 	else
 		printf "${bold}${cyan}problem_$i.py file is not found.${normal} Skipping...\n\n"
 	fi
@@ -78,7 +88,8 @@ for i in $(seq $start $end); do
 		if [ $? = 0 ]
 		then  # If compile succeeded
 			printf "Compile complete. Running...\n\t${bold}"
-			\time -pf "${normal}%e s" ./problem_$i\_c
+			timeout 3 \time -pf "${normal}%e s" ./problem_$i\_c
+			is_timedout
 			rm problem_$i\_c
 		else
 			printf "${red}${bold}Compiling failed.${normal} Skipping...\n"
@@ -96,7 +107,8 @@ for i in $(seq $start $end); do
 		if [ $? -eq 0 ]
 		then  # If compile succeeded
 			printf "Compile complete. Running...\n\t${bold}"
-			\time -pf "${normal}%e s" ./problem_$i\_f
+			timeout 3 \time -pf "${normal}%e s" ./problem_$i\_f
+			is_timedout
 			rm problem_$i\_f
 		else  # If compile failed
 			printf "${red}${bold}Compiling failed.${normal} Skipping...\n"
@@ -112,7 +124,8 @@ for i in $(seq $start $end); do
 		if [ -f "problem_$i.go" ]
 		then
 			printf "${bold}${blue}Go${normal}\n\t${bold}"
-			\time -pf "${normal}%e s" go run problem_$i.go
+			timeout 3 \time -pf "${normal}%e s" go run problem_$i.go
+			is_timedout
 		else
 			printf "${bold}${cyan}problem_$i.go file is not found.${normal} Skipping...\n\n"
 		fi
@@ -127,7 +140,8 @@ for i in $(seq $start $end); do
 		if [ -f "problem_$i.m" ]
 		then
 			printf "${bold}${green}Matlab${normal}\n\t"
-			matlab -nodesktop -nosplash -nojvm -r "run('problem_$i.m'); exit;" | tail -n +11
+			timeout 3 matlab -nodesktop -nosplash -nojvm -r "run('problem_$i.m'); exit;" | tail -n +11
+			is_timedout
 		else
 			printf "${bold}${cyan}problem_$i.m file is not found.${normal} Skipping...\n\n"
 		fi
@@ -142,7 +156,8 @@ for i in $(seq $start $end); do
 		if [ -f "problem_$i.m" ]
 		then
 			printf "${bold}${green}Octave${normal}\n\t"
-			octave -qf problem_$i.m
+			timeout 3 octave -qf problem_$i.m
+			is_timedout; rm octave_workspace
 		else
 			printf "${bold}${cyan}problem_$i.m file is not found.${normal} Skipping...\n\n"
 		fi
@@ -157,7 +172,8 @@ for i in $(seq $start $end); do
 		if [ -f "problem_$i.jl" ]
 		then
 			printf "${bold}${green}Julia${normal}\n\t${bold}"
-			\time -pf "${normal}%e s" julia problem_$i.jl
+			timeout 3 \time -pf "${normal}%e s" julia problem_$i.jl
+			is_timedout
 		else
 			printf "${bold}${cyan}problem_$i.jl file is not found.${normal} Skipping...\n\n"
 		fi
@@ -170,7 +186,8 @@ for i in $(seq $start $end); do
 	# Run awk
 	if [ -f "problem_$i.awk" ]; then
 		printf "${bold}${green}Awk${normal}\n\t${bold}"
-		\time -pf "${normal}%e s" ./problem_$i.awk
+		timeout 3 \time -pf "${normal}%e s" ./problem_$i.awk
+		is_timedout
 	else
 		printf "${bold}${cyan}problem_$i.awk file is not found.${normal} Skipping...\n\n"
 	fi
