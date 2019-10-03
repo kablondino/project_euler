@@ -1,5 +1,5 @@
 This repository contains the source code to the [Project Euler](https://projecteuler.net/ "Project Euler") problems in various languages.
-Currently, it includes Python, C, Fortran 95, Go, Matlab/Octave, Julia, and Awk.
+Currently, it includes Python, C, Fortran 95, Go, Matlab/Octave, Julia, Awk, and Bash (in development).
 All of the solutions will be attempted without use of proprietary functions, *i.e.* no built-in Matlab functions that aren't in Octave.
 
 Use the `run.sh` script to run and time all of the problems.
