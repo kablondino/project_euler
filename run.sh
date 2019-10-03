@@ -27,7 +27,7 @@ error() { log "ERROR: $*" >&2; }
 fatal() { error "$*"; exit 1; }
 usage_fatal() { error "$*"; usage >&2; exit 1; }
 
-is_timedout() { 
+is_timedout() {
 	if [ $? -eq 124 ]; then
 		printf "${red}Timed out${normal}\n\t"
 	else
