@@ -67,7 +67,8 @@ cyan=$(tput setaf 6)
 # Loop through each problem folder and run them
 for i in $(seq $start $end); do
 	cd Problem_$i
-	printf -- "---------------------------------- ${bold}PROBLEM $i${normal} ----------------------------------\n"
+	printf -- "---------------------------------- ${bold}PROBLEM $i${normal}"
+	printf -- " ----------------------------------\n"
 
 
 	# Run Python
@@ -76,7 +77,8 @@ for i in $(seq $start $end); do
 		timeout 3 \time -pf "${normal}%e s" python3 problem_$i.py
 		is_timedout
 	else
-		printf "${bold}${cyan}problem_$i.py file is not found.${normal} Skipping...\n\n"
+		printf "${bold}${cyan}problem_$i.py file is not found.${normal} "
+		printf "Skipping...\n\n"
 	fi
 	printf "\n"
 
@@ -95,7 +97,8 @@ for i in $(seq $start $end); do
 			printf "${red}${bold}Compiling failed.${normal} Skipping...\n"
 		fi  # If compile failed
 	else
-		printf "${bold}${cyan}problem_$i.c file is not found.${normal} Skipping...\n\n"
+		printf "${bold}${cyan}problem_$i.c file is not found.${normal} "
+		printf "Skipping...\n\n"
 	fi
 	printf "\n"
 
@@ -114,7 +117,8 @@ for i in $(seq $start $end); do
 			printf "${red}${bold}Compiling failed.${normal} Skipping...\n"
 		fi
 	else
-		printf "${bold}${cyan}problem_$i.f file is not found.${normal} Skipping...\n\n"
+		printf "${bold}${cyan}problem_$i.f file is not found.${normal} "
+		printf "Skipping...\n\n"
 	fi
 	printf "\n"
 
@@ -127,10 +131,12 @@ for i in $(seq $start $end); do
 			timeout 3 \time -pf "${normal}%e s" go run problem_$i.go
 			is_timedout
 		else
-			printf "${bold}${cyan}problem_$i.go file is not found.${normal} Skipping...\n\n"
+			printf "${bold}${cyan}problem_$i.go file is not found.${normal} "
+			printf "Skipping...\n\n"
 		fi
 	else
-		printf "${bold}${cyan}Go compiler is not found.${normal} Skipping...\n\n"
+		printf "${bold}${cyan}Go compiler is not found.${normal} "
+		printf "Skipping...\n\n"
 	fi
 	printf "\n"
 
@@ -140,10 +146,12 @@ for i in $(seq $start $end); do
 		if [ -f "problem_$i.m" ]
 		then
 			printf "${bold}${green}Matlab${normal}\n\t"
-			timeout 3 matlab -nodesktop -nosplash -nojvm -r "run('problem_$i.m'); exit;" | tail -n +11
+			timeout 3 matlab -nodesktop -nosplash -nojvm -r \
+				"run('problem_$i.m'); exit;" | tail -n +11
 			is_timedout
 		else
-			printf "${bold}${cyan}problem_$i.m file is not found.${normal} Skipping...\n\n"
+			printf "${bold}${cyan}problem_$i.m file is not found.${normal} "
+			printf "Skipping...\n\n"
 		fi
 	else
 		printf "${bold}${cyan}Matlab is not found.${normal} Skipping...\n\n"
@@ -157,9 +165,14 @@ for i in $(seq $start $end); do
 		then
 			printf "${bold}${green}Octave${normal}\n\t"
 			timeout 3 octave -qf problem_$i.m
-			is_timedout; rm octave_workspace
+			is_timedout
+		if [ -f "octave-workspace" ]; then
+			printf "Removing octave-workspace file\n"
+			rm octave-workspace
+		fi
 		else
-			printf "${bold}${cyan}problem_$i.m file is not found.${normal} Skipping...\n\n"
+			printf "${bold}${cyan}problem_$i.m file is not found.${normal} "
+			printf "Skipping...\n\n"
 		fi
 	else
 		printf "${bold}${cyan}Octave is not found.${normal} Skipping...\n\n"
@@ -175,7 +188,8 @@ for i in $(seq $start $end); do
 			timeout 3 \time -pf "${normal}%e s" julia problem_$i.jl
 			is_timedout
 		else
-			printf "${bold}${cyan}problem_$i.jl file is not found.${normal} Skipping...\n\n"
+			printf "${bold}${cyan}problem_$i.jl file is not found.${normal} "
+			printf "Skipping...\n\n"
 		fi
 	else
 		printf "${bold}${cyan}Julia is not found.${normal} Skipping...\n\n"
@@ -189,7 +203,8 @@ for i in $(seq $start $end); do
 		timeout 3 \time -pf "${normal}%e s" ./problem_$i.awk
 		is_timedout
 	else
-		printf "${bold}${cyan}problem_$i.awk file is not found.${normal} Skipping...\n\n"
+		printf "${bold}${cyan}problem_$i.awk file is not found.${normal} "
+		printf "Skipping...\n\n"
 	fi
 	printf "\n"
 
