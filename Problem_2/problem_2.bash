@@ -16,6 +16,16 @@ the_sum=0
 previous=1
 current=1
 
+# Bash function to use Binet's formula
+# Currently unused
+function F () {
+	N=$(( 1 + $1 ))
+	S5=$(echo "scale=10; sqrt(5)" | bc)
+	PHI=$(( (1+S5)/2 ))
+	PHI2=$(( 1 - PHI ))
+	return $(( ($PHI ** $N - $PHI2 ** $N) / $S5 ))
+}
+
 while [ "$current" -le 4000000 ]; do
 	# Fibonacci
 	temporary=$current
