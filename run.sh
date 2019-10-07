@@ -171,7 +171,7 @@ for i in $(seq $start $end); do
 		if [ -f "problem_$i.m" ]
 		then
 			printf "${bold}${green}Octave${normal}\n\t"
-			timeout $timeout_time octave -qf problem_$i.m
+			timeout $timeout_time octave-cli -qf problem_$i.m
 			is_timedout
 		if [ -f "octave-workspace" ]; then
 			printf "Removing octave-workspace file\n"
