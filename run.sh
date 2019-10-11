@@ -68,8 +68,11 @@ blue=$(tput setaf 4)
 pink=$(tput setaf 5)
 cyan=$(tput setaf 6)
 
+# Print nice intro info
+printf "\t\t${bold}${pink}STARTING PROBLEM: ${normal}Problem $start\n"
+printf "\t\t${bold}${pink}ENDING PROBLEM:   ${normal}Problem $end\n\n"
 
-## Set the timeout
+printf "\t\t${bold}${red}TIMEOUT LENGTH:    ${normal}$timeout_time seconds\n\n"
 
 # Loop through each problem folder and run them
 for i in $(seq $start $end); do
@@ -171,7 +174,7 @@ for i in $(seq $start $end); do
 		if [ -f "problem_$i.m" ]
 		then
 			printf "${bold}${green}Octave${normal}\n\t"
-			timeout $timeout_time octave -qf problem_$i.m
+			timeout $timeout_time octave-cli -qf problem_$i.m
 			is_timedout
 		if [ -f "octave-workspace" ]; then
 			printf "Removing octave-workspace file\n"
