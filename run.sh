@@ -31,11 +31,7 @@ fatal() { error "$*"; exit 1; }
 usage_fatal() { error "$*"; usage >&2; exit 1; }
 
 is_timedout() {
-	if [ $? -eq 124 ]; then
-		printf "${red}Timed out${normal}\n\t"
-	else
-		continue
-	fi
+	[ $? -eq 124 ] && printf "${red}Timed out${normal}\n\t" || continue
 }
 
 
@@ -69,10 +65,10 @@ pink=$(tput setaf 5)
 cyan=$(tput setaf 6)
 
 # Print nice intro info
-printf "\t\t${bold}${pink}STARTING PROBLEM: ${normal}Problem $start\n"
-printf "\t\t${bold}${pink}ENDING PROBLEM:   ${normal}Problem $end\n\n"
+printf "\t\t${bold}${pink}STARTING PROBLEM:\t${normal}Problem $start\n"
+printf "\t\t  ${bold}${pink}ENDING PROBLEM:\t${normal}Problem $end\n\n"
 
-printf "\t\t${bold}${red}TIMEOUT LENGTH:    ${normal}$timeout_time seconds\n\n"
+printf "\t\t  ${bold}${red}TIMEOUT LENGTH:\t${normal}$timeout_time seconds\n\n"
 
 # Loop through each problem folder and run them
 for i in $(seq $start $end); do
@@ -97,15 +93,14 @@ for i in $(seq $start $end); do
 	if [ -f "problem_$i.c" ]; then
 		printf "${bold}${blue}C${normal}\nCompiling...\n"
 		gcc -Wall problem_$i.c -o problem_$i\_c -lm
-		if [ $? = 0 ]
-		then  # If compile succeeded
+		if [ $? = 0 ]; then  # If compile succeeded
 			printf "Compile complete. Running...\n\t${bold}"
 			timeout $timeout_time \time -pf "${normal}%e s" ./problem_$i\_c
 			is_timedout
 			rm problem_$i\_c
-		else
+		else  # If compile failed
 			printf "${red}${bold}Compiling failed.${normal} Skipping...\n"
-		fi  # If compile failed
+		fi
 	else
 		printf "${bold}${cyan}problem_$i.c file is not found.${normal} "
 		printf "Skipping...\n\n"
@@ -117,8 +112,7 @@ for i in $(seq $start $end); do
 	if [ -f "problem_$i.f95" ]; then
 		printf "${bold}${blue}Fortran${normal}\nCompiling...\n"
 		gfortran -Wall problem_$i.f95 -o problem_$i\_f
-		if [ $? -eq 0 ]
-		then  # If compile succeeded
+		if [ $? -eq 0 ]; then  # If compile succeeded
 			printf "Compile complete. Running...\n\t${bold}"
 			timeout $timeout_time \time -pf "${normal}%e s" ./problem_$i\_f
 			is_timedout
@@ -135,8 +129,7 @@ for i in $(seq $start $end); do
 
 	# Run Go
 	if [ -x "$(command -v go)" ]; then
-		if [ -f "problem_$i.go" ]
-		then
+		if [ -f "problem_$i.go" ]; then
 			printf "${bold}${blue}Go${normal}\n\t${bold}"
 			timeout $timeout_time \time -pf "${normal}%e s" go run problem_$i.go
 			is_timedout
@@ -153,8 +146,7 @@ for i in $(seq $start $end); do
 
 	# Run Matlab
 	if [ -x "$(command -v matlab)" ]; then
-		if [ -f "problem_$i.m" ]
-		then
+		if [ -f "problem_$i.m" ]; then
 			printf "${bold}${green}Matlab${normal}\n\t"
 			timeout $timeout_time matlab -nodesktop -nosplash -nojvm -r \
 				"run('problem_$i.m'); exit;" | tail -n +11
@@ -171,8 +163,7 @@ for i in $(seq $start $end); do
 
 	# Run Octave
 	if [ -x "$(command -v octave)" ]; then
-		if [ -f "problem_$i.m" ]
-		then
+		if [ -f "problem_$i.m" ]; then
 			printf "${bold}${green}Octave${normal}\n\t"
 			timeout $timeout_time octave-cli -qf problem_$i.m
 			is_timedout
@@ -192,8 +183,7 @@ for i in $(seq $start $end); do
 
 	# Run Julia
 	if [ -x "$(command -v julia)" ]; then
-		if [ -f "problem_$i.jl" ]
-		then
+		if [ -f "problem_$i.jl" ]; then
 			printf "${bold}${green}Julia${normal}\n\t${bold}"
 			timeout $timeout_time \time -pf "${normal}%e s" julia problem_$i.jl
 			is_timedout
